@@ -7,7 +7,107 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
-*{margin:0;padding:0;box-sizing:border-box}:root{--primary:#4f46e5;--primary-dark:#3730a3;--success:#10b981;--danger:#ef4444;--gray-50:#f9fafb;--gray-100:#f3f4f6;--gray-200:#e5e7eb;--gray-300:#d1d5db;--gray-400:#9ca3af;--gray-500:#6b7280;--gray-600:#4b5563;--gray-700:#374151;--gray-800:#1f2937;--shadow:0 1px 3px rgba(0,0,0,.12);--shadow-lg:0 10px 15px -3px rgba(0,0,0,.1);--radius:12px;--radius-sm:8px}body{font-family:'Noto Sans TC',-apple-system,BlinkMacSystemFont,sans-serif;background:var(--gray-100);color:var(--gray-800);min-height:100vh}.auth-container{min-height:100vh;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);padding:20px}.auth-card{background:#fff;border-radius:20px;padding:40px;width:100%;max-width:440px;box-shadow:var(--shadow-lg)}.auth-header{text-align:center;margin-bottom:30px}.auth-icon{font-size:48px;color:var(--primary);margin-bottom:10px}.auth-header h1{font-size:28px;color:var(--gray-800);margin-bottom:5px}.auth-header p{color:var(--gray-500);font-size:14px}.auth-form h2{font-size:20px;margin-bottom:20px;color:var(--gray-700)}.form-group{margin-bottom:16px}.form-group label{display:block;font-size:13px;font-weight:500;color:var(--gray-600);margin-bottom:6px}.form-group input,.form-group select{width:100%;padding:10px 14px;border:2px solid var(--gray-200);border-radius:var(--radius-sm);font-size:14px;font-family:inherit;background:#fff}.form-group input:focus,.form-group select:focus{outline:none;border-color:var(--primary);box-shadow:0 0 0 3px rgba(79,70,229,.1)}.form-row{display:flex;gap:16px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:10px 20px;border:none;border-radius:var(--radius-sm);font-size:14px;font-weight:500;font-family:inherit;cursor:pointer;transition:all .2s}.btn-primary{background:var(--primary);color:#fff}.btn-primary:hover{background:var(--primary-dark)}.btn-success{background:var(--success);color:#fff}.btn-danger{background:var(--danger);color:#fff}.btn-outline{background:transparent;color:var(--gray-600);border:2px solid var(--gray-300)}.btn-google{background:#fff;color:var(--gray-700);border:2px solid var(--gray-300)}.btn-full{width:100%}.btn-sm{padding:6px 12px;font-size:13px}.btn-xs{padding:4px 8px;font-size:12px}.divider{text-align:center;margin:20px 0;position:relative}.divider::before{content:'';position:absolute;top:50%;left:0;right:0;height:1px;background:var(--gray-200)}.divider span{background:#fff;padding:0 12px;position:relative;color:var(--gray-400);font-size:13px}.auth-switch{text-align:center;margin-top:20px;font-size:14px;color:var(--gray-500)}.auth-switch a{color:var(--primary);text-decoration:none;font-weight:500;cursor:pointer}.error-message{background:#fef2f2;color:var(--danger);padding:10px 14px;border-radius:var(--radius-sm);font-size:13px;margin-top:16px;border:1px solid #fecaca}.app-container{min-height:100vh}.app-header{background:#fff;padding:12px 24px;display:flex;align-items:center;justify-content:space-between;box-shadow:var(--shadow);position:sticky;top:0;z-index:100}.header-left{display:flex;align-items:center;gap:10px}.header-left i{font-size:24px;color:var(--primary)}.header-left h1{font-size:20px;color:var(--gray-800)}.header-right{display:flex;align-items:center;gap:12px}.user-info{font-size:13px;color:var(--gray-500)}.tab-nav{background:#fff;display:flex;overflow-x:auto;border-bottom:2px solid var(--gray-200);padding:0 16px}.tab-btn{flex-shrink:0;display:flex;align-items:center;gap:6px;padding:14px 20px;border:none;background:none;font-size:14px;font-weight:500;font-family:inherit;color:var(--gray-500);cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-2px}.tab-btn.active{color:var(--primary);border-bottom-color:var(--primary)}.main-content{max-width:960px;margin:0 auto;padding:20px}.tab-content{display:none}.tab-content.active{display:block}.card{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}.card-header{padding:16px 20px;border-bottom:1px solid var(--gray-100);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px}.card-header h2{font-size:16px;display:flex;align-items:center;gap:8px}.card-body{padding:20px}.mt-20{margin-top:20px}.text-success{color:var(--success)}.text-danger{color:var(--danger)}.records-list{max-height:500px;overflow-y:auto}.record-item{display:flex;align-items:center;padding:12px 0;border-bottom:1px solid var(--gray-100);gap:12px}.record-item:last-child{border-bottom:none}.record-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}.record-icon.expense{background:#fef2f2;color:var(--danger)}.record-icon.income{background:#ecfdf5;color:var(--success)}.record-info{flex:1;min-width:0}.record-info .record-title{font-weight:500;font-size:14px;color:var(--gray-800)}.record-info .record-meta{font-size:12px;color:var(--gray-400);margin-top:2px}.record-amount{font-weight:700;font-size:15px;flex-shrink:0}.record-amount.expense{color:var(--danger)}.record-amount.income{color:var(--success)}.record-actions{display:flex;gap:4px;flex-shrink:0}.record-actions .btn-xs{opacity:.6}.empty-msg{text-align:center;color:var(--gray-400);padding:30px;font-size:14px}.filter-row{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.filter-row select,.filter-row input{padding:6px 10px;border:2px solid var(--gray-200);border-radius:var(--radius-sm);font-size:13px;font-family:inherit}.summary-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.summary-card{background:#fff;border-radius:var(--radius);padding:20px;display:flex;align-items:center;gap:16px;box-shadow:var(--shadow)}.summary-icon{width:50px;height:50px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px}.income-card .summary-icon{background:#ecfdf5;color:var(--success)}.expense-card .summary-icon{background:#fef2f2;color:var(--danger)}.net-card .summary-icon{background:#eef2ff;color:var(--primary)}.summary-label{display:block;font-size:12px;color:var(--gray-500);margin-bottom:4px}.summary-value{display:block;font-size:22px;font-weight:700;color:var(--gray-800)}.report-table-container{overflow-x:auto}.report-table{width:100%;border-collapse:collapse;font-size:13px}.report-table th{background:var(--gray-50);padding:10px 14px;text-align:left;font-weight:600;color:var(--gray-600);border-bottom:2px solid var(--gray-200);white-space:nowrap}.report-table td{padding:10px 14px;border-bottom:1px solid var(--gray-100);color:var(--gray-700)}.report-table .total-row td{font-weight:700;background:var(--gray-50);border-top:2px solid var(--gray-300)}.settings-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}.add-item-row{display:flex;gap:8px;margin-bottom:16px}.add-item-row input{flex:1;padding:8px 12px;border:2px solid var(--gray-200);border-radius:var(--radius-sm);font-size:13px;font-family:inherit}.tags-list{display:flex;flex-wrap:wrap;gap:8px}.tag-item{display:inline-flex;align-items:center;gap:6px;padding:6px 12px;background:var(--gray-100);border-radius:20px;font-size:13px;color:var(--gray-700)}.tag-item .tag-delete{cursor:pointer;color:var(--gray-400);font-size:12px}.toast-container{position:fixed;top:20px;right:20px;z-index:9999;display:flex;flex-direction:column;gap:8px}.toast{padding:12px 20px;border-radius:var(--radius-sm);font-size:14px;color:#fff;box-shadow:var(--shadow-lg);animation:toastIn .3s ease,toastOut .3s ease 2.7s forwards;max-width:350px}.toast.success{background:var(--success)}.toast.error{background:var(--danger)}.toast.info{background:var(--primary)}@keyframes toastIn{from{transform:translateX(100%);opacity:0}to{transform:translateX(0);opacity:1}}@keyframes toastOut{from{transform:translateX(0);opacity:1}to{transform:translateX(100%);opacity:0}}.modal{position:fixed;inset:0;z-index:1000;display:flex;align-items:center;justify-content:center}.modal-overlay{position:absolute;inset:0;background:rgba(0,0,0,.5)}.modal-content{position:relative;background:#fff;border-radius:var(--radius);width:90%;max-width:500px;max-height:90vh;overflow-y:auto;box-shadow:var(--shadow-lg)}.modal-header{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;border-bottom:1px solid var(--gray-200)}.modal-header h3{font-size:16px}.btn-close{background:none;border:none;font-size:24px;cursor:pointer;color:var(--gray-400);line-height:1}.modal-body{padding:20px}.modal-footer{padding:12px 20px;border-top:1px solid var(--gray-200);display:flex;justify-content:flex-end;gap:8px}.loading-spinner{display:inline-block;width:20px;height:20px;border:2px solid var(--gray-200);border-top-color:var(--primary);border-radius:50%;animation:spin .6s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}@media(max-width:768px){.form-row{flex-direction:column}.summary-cards{grid-template-columns:1fr}.settings-grid{grid-template-columns:1fr}}::-webkit-scrollbar{width:6px}::-webkit-scrollbar-thumb{background:var(--gray-300);border-radius:3px}
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--primary:#4f46e5;--primary-dark:#3730a3;--success:#10b981;--danger:#ef4444;--gray-50:#f9fafb;--gray-100:#f3f4f6;--gray-200:#e5e7eb;--gray-300:#d1d5db;--gray-400:#9ca3af;--gray-500:#6b7280;--gray-600:#4b5563;--gray-700:#374151;--gray-800:#1f2937;--shadow:0 1px 3px rgba(0,0,0,.12);--shadow-lg:0 10px 15px -3px rgba(0,0,0,.1);--radius:12px;--radius-sm:8px}
+body{font-family:'Noto Sans TC',-apple-system,sans-serif;background:var(--gray-100);color:var(--gray-800);min-height:100vh}
+.auth-container{min-height:100vh;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#667eea,#764ba2);padding:20px}
+.auth-card{background:#fff;border-radius:20px;padding:40px;width:100%;max-width:440px;box-shadow:var(--shadow-lg)}
+.auth-header{text-align:center;margin-bottom:30px}
+.auth-icon{font-size:48px;color:var(--primary);margin-bottom:10px}
+.auth-header h1{font-size:28px;margin-bottom:5px}
+.auth-header p{color:var(--gray-500);font-size:14px}
+.auth-form h2{font-size:20px;margin-bottom:20px;color:var(--gray-700)}
+.form-group{margin-bottom:16px;flex:1}
+.form-group label{display:block;font-size:13px;font-weight:500;color:var(--gray-600);margin-bottom:6px}
+.form-group input,.form-group select{width:100%;padding:10px 14px;border:2px solid var(--gray-200);border-radius:var(--radius-sm);font-size:14px;font-family:inherit;background:#fff}
+.form-group input:focus,.form-group select:focus{outline:none;border-color:var(--primary);box-shadow:0 0 0 3px rgba(79,70,229,.1)}
+.form-row{display:flex;gap:16px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:10px 20px;border:none;border-radius:var(--radius-sm);font-size:14px;font-weight:500;font-family:inherit;cursor:pointer;transition:all .2s}
+.btn-primary{background:var(--primary);color:#fff}.btn-primary:hover{background:var(--primary-dark)}
+.btn-success{background:var(--success);color:#fff}.btn-danger{background:var(--danger);color:#fff}
+.btn-outline{background:transparent;color:var(--gray-600);border:2px solid var(--gray-300)}
+.btn-google{background:#fff;color:var(--gray-700);border:2px solid var(--gray-300)}
+.btn-full{width:100%}.btn-sm{padding:6px 12px;font-size:13px}.btn-xs{padding:4px 8px;font-size:12px}
+.divider{text-align:center;margin:20px 0;position:relative}
+.divider::before{content:'';position:absolute;top:50%;left:0;right:0;height:1px;background:var(--gray-200)}
+.divider span{background:#fff;padding:0 12px;position:relative;color:var(--gray-400);font-size:13px}
+.auth-switch{text-align:center;margin-top:20px;font-size:14px;color:var(--gray-500)}
+.auth-switch a{color:var(--primary);text-decoration:none;font-weight:500;cursor:pointer}
+.error-message{background:#fef2f2;color:var(--danger);padding:10px 14px;border-radius:var(--radius-sm);font-size:13px;margin-top:16px;border:1px solid #fecaca}
+.app-container{min-height:100vh}
+.app-header{background:#fff;padding:12px 24px;display:flex;align-items:center;justify-content:space-between;box-shadow:var(--shadow);position:sticky;top:0;z-index:100}
+.header-left{display:flex;align-items:center;gap:10px}
+.header-left i{font-size:24px;color:var(--primary)}
+.header-left h1{font-size:20px}
+.header-right{display:flex;align-items:center;gap:12px}
+.user-info-block{text-align:right}
+.user-name{font-size:14px;font-weight:600;color:var(--gray-800)}
+.user-date{font-size:11px;color:var(--gray-400)}
+.tab-nav{background:#fff;display:flex;overflow-x:auto;border-bottom:2px solid var(--gray-200);padding:0 16px}
+.tab-btn{flex-shrink:0;display:flex;align-items:center;gap:6px;padding:14px 20px;border:none;background:none;font-size:14px;font-weight:500;font-family:inherit;color:var(--gray-500);cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-2px}
+.tab-btn.active{color:var(--primary);border-bottom-color:var(--primary)}
+.main-content{max-width:960px;margin:0 auto;padding:20px}
+.tab-content{display:none}.tab-content.active{display:block}
+.card{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}
+.card-header{padding:16px 20px;border-bottom:1px solid var(--gray-100);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px}
+.card-header h2{font-size:16px;display:flex;align-items:center;gap:8px}
+.card-body{padding:20px}.mt-20{margin-top:20px}
+.text-success{color:var(--success)}.text-danger{color:var(--danger)}
+.records-list{max-height:500px;overflow-y:auto}
+.record-item{display:flex;align-items:center;padding:12px 0;border-bottom:1px solid var(--gray-100);gap:12px}
+.record-item:last-child{border-bottom:none}
+.record-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
+.record-icon.expense{background:#fef2f2;color:var(--danger)}
+.record-icon.income{background:#ecfdf5;color:var(--success)}
+.record-info{flex:1;min-width:0}
+.record-title{font-weight:500;font-size:14px}
+.record-meta{font-size:12px;color:var(--gray-400);margin-top:2px}
+.record-amount{font-weight:700;font-size:15px;flex-shrink:0}
+.record-amount.expense{color:var(--danger)}.record-amount.income{color:var(--success)}
+.record-actions{display:flex;gap:4px;flex-shrink:0}
+.empty-msg{text-align:center;color:var(--gray-400);padding:30px;font-size:14px}
+.filter-row{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.filter-row select,.filter-row input{padding:6px 10px;border:2px solid var(--gray-200);border-radius:var(--radius-sm);font-size:13px;font-family:inherit}
+.summary-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.summary-card{background:#fff;border-radius:var(--radius);padding:20px;display:flex;align-items:center;gap:16px;box-shadow:var(--shadow)}
+.summary-icon{width:50px;height:50px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px}
+.income-card .summary-icon{background:#ecfdf5;color:var(--success)}
+.expense-card .summary-icon{background:#fef2f2;color:var(--danger)}
+.net-card .summary-icon{background:#eef2ff;color:var(--primary)}
+.summary-label{display:block;font-size:12px;color:var(--gray-500);margin-bottom:4px}
+.summary-value{display:block;font-size:22px;font-weight:700}
+.report-table-container{overflow-x:auto}
+.report-table{width:100%;border-collapse:collapse;font-size:13px}
+.report-table th{background:var(--gray-50);padding:10px 14px;text-align:left;font-weight:600;color:var(--gray-600);border-bottom:2px solid var(--gray-200);white-space:nowrap}
+.report-table td{padding:10px 14px;border-bottom:1px solid var(--gray-100)}
+.report-table .total-row td{font-weight:700;background:var(--gray-50);border-top:2px solid var(--gray-300)}
+.settings-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.add-item-row{display:flex;gap:8px;margin-bottom:16px}
+.add-item-row input{flex:1;padding:8px 12px;border:2px solid var(--gray-200);border-radius:var(--radius-sm);font-size:13px;font-family:inherit}
+.tags-list{display:flex;flex-wrap:wrap;gap:8px}
+.tag-item{display:inline-flex;align-items:center;gap:6px;padding:6px 12px;background:var(--gray-100);border-radius:20px;font-size:13px}
+.tag-item .tag-delete{cursor:pointer;color:var(--gray-400);font-size:12px}
+.toast-container{position:fixed;top:20px;right:20px;z-index:9999;display:flex;flex-direction:column;gap:8px}
+.toast{padding:12px 20px;border-radius:var(--radius-sm);font-size:14px;color:#fff;box-shadow:var(--shadow-lg);animation:toastIn .3s ease,toastOut .3s ease 2.7s forwards;max-width:350px}
+.toast.success{background:var(--success)}.toast.error{background:var(--danger)}.toast.info{background:var(--primary)}
+@keyframes toastIn{from{transform:translateX(100%);opacity:0}to{transform:translateX(0);opacity:1}}
+@keyframes toastOut{from{opacity:1}to{opacity:0}}
+.modal{position:fixed;inset:0;z-index:1000;display:flex;align-items:center;justify-content:center}
+.modal-overlay{position:absolute;inset:0;background:rgba(0,0,0,.5)}
+.modal-content{position:relative;background:#fff;border-radius:var(--radius);width:90%;max-width:500px;max-height:90vh;overflow-y:auto;box-shadow:var(--shadow-lg)}
+.modal-header{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;border-bottom:1px solid var(--gray-200)}
+.modal-header h3{font-size:16px}
+.btn-close{background:none;border:none;font-size:24px;cursor:pointer;color:var(--gray-400);line-height:1}
+.modal-body{padding:20px}
+.modal-footer{padding:12px 20px;border-top:1px solid var(--gray-200);display:flex;justify-content:flex-end;gap:8px}
+.loading-spinner{display:inline-block;width:20px;height:20px;border:2px solid var(--gray-200);border-top-color:var(--primary);border-radius:50%;animation:spin .6s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.converted-amount{font-size:13px;color:var(--primary);font-weight:600;padding:8px 12px;background:#eef2ff;border-radius:var(--radius-sm);margin-top:4px;display:none}
+.currency-row{display:flex;gap:8px;align-items:center;margin-bottom:8px;padding:8px;background:var(--gray-50);border-radius:var(--radius-sm)}
+.currency-row .curr-name{flex:1;font-weight:500;font-size:14px}
+.currency-row .curr-rate{width:100px;font-size:13px}
+.currency-row input{width:100px;padding:4px 8px;border:1px solid var(--gray-300);border-radius:4px;font-size:13px}
+@media(max-width:768px){.form-row{flex-direction:column}.summary-cards{grid-template-columns:1fr}.settings-grid{grid-template-columns:1fr}.user-info-block{display:none}}
 </style>
 </head>
 <body>
@@ -31,6 +131,7 @@
         </div>
         <div id="register-form" class="auth-form" style="display:none;">
             <h2>註冊</h2>
+            <div class="form-group"><label><i class="fas fa-user"></i> 名稱 *</label><input type="text" id="register-name" placeholder="你的名稱"></div>
             <div class="form-group"><label><i class="fas fa-envelope"></i> 電子郵件</label><input type="email" id="register-email" placeholder="your@email.com"></div>
             <div class="form-group"><label><i class="fas fa-lock"></i> 密碼（至少6位）</label><input type="password" id="register-password" placeholder="設定密碼"></div>
             <div class="form-group"><label><i class="fas fa-lock"></i> 確認密碼</label><input type="password" id="register-password-confirm" placeholder="再次輸入密碼"></div>
@@ -43,11 +144,29 @@
     </div>
 </div>
 
+<!-- Google 登入名稱補填 Modal -->
+<div id="name-modal" class="modal" style="display:none;">
+    <div class="modal-overlay"></div>
+    <div class="modal-content">
+        <div class="modal-header"><h3>👋 歡迎！請輸入你的名稱</h3></div>
+        <div class="modal-body">
+            <div class="form-group"><label>名稱 *</label><input type="text" id="google-name-input" placeholder="你的名稱"></div>
+        </div>
+        <div class="modal-footer"><button class="btn btn-primary" onclick="saveGoogleName()">確認</button></div>
+    </div>
+</div>
+
 <!-- 主應用 -->
 <div id="app-container" class="app-container" style="display:none;">
     <header class="app-header">
         <div class="header-left"><i class="fas fa-wallet"></i><h1>財務記賬</h1></div>
-        <div class="header-right"><span id="user-display" class="user-info"></span><button class="btn btn-sm btn-outline" onclick="logout()"><i class="fas fa-sign-out-alt"></i> 登出</button></div>
+        <div class="header-right">
+            <div class="user-info-block">
+                <div class="user-name" id="user-display-name">使用者</div>
+                <div class="user-date" id="user-display-date"></div>
+            </div>
+            <button class="btn btn-sm btn-outline" onclick="logout()"><i class="fas fa-sign-out-alt"></i> 登出</button>
+        </div>
     </header>
     <nav class="tab-nav">
         <button class="tab-btn active" data-tab="expense" onclick="switchTab('expense')"><i class="fas fa-arrow-down text-danger"></i> 支出</button>
@@ -57,30 +176,55 @@
         <button class="tab-btn" data-tab="settings" onclick="switchTab('settings')"><i class="fas fa-cog"></i> 設定</button>
     </nav>
     <main class="main-content">
+        <!-- 支出 -->
         <div id="tab-expense" class="tab-content active">
             <div class="card">
                 <div class="card-header"><h2><i class="fas fa-minus-circle text-danger"></i> 新增支出</h2></div>
                 <div class="card-body">
-                    <div class="form-row"><div class="form-group"><label>金額 *</label><input type="number" id="expense-amount" placeholder="0.00" step="0.01" min="0"></div><div class="form-group"><label>日期 *</label><input type="date" id="expense-date"></div></div>
-                    <div class="form-row"><div class="form-group"><label>形式 *</label><select id="expense-method"><option value="現金">💵 現金</option><option value="銀行">🏦 銀行</option><option value="信用卡">💳 信用卡</option></select></div><div class="form-group"><label>種類 *</label><select id="expense-category"><option value="">-- 選擇 --</option></select></div></div>
-                    <div class="form-row"><div class="form-group"><label>Project</label><select id="expense-project"><option value="">-- 無 --</option></select></div><div class="form-group"><label>備註</label><input type="text" id="expense-note" placeholder="選填"></div></div>
+                    <div class="form-row">
+                        <div class="form-group"><label>金額 *</label><input type="number" id="expense-amount" placeholder="0.00" step="0.01" min="0" oninput="convertCurrency('expense')"></div>
+                        <div class="form-group"><label>貨幣</label><select id="expense-currency" onchange="convertCurrency('expense')"></select></div>
+                        <div class="form-group"><label>日期 *</label><input type="date" id="expense-date"></div>
+                    </div>
+                    <div id="expense-converted" class="converted-amount"></div>
+                    <div class="form-row">
+                        <div class="form-group"><label>形式 *</label><select id="expense-method"><option value="現金">💵 現金</option><option value="銀行">🏦 銀行</option><option value="信用卡">💳 信用卡</option></select></div>
+                        <div class="form-group"><label>種類 *</label><select id="expense-category"><option value="">-- 選擇 --</option></select></div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group"><label>Project</label><select id="expense-project"><option value="">-- 無 --</option></select></div>
+                        <div class="form-group"><label>備註</label><input type="text" id="expense-note" placeholder="選填"></div>
+                    </div>
                     <button class="btn btn-danger btn-full" onclick="addExpense()"><i class="fas fa-plus"></i> 新增支出</button>
                 </div>
             </div>
             <div class="card mt-20"><div class="card-header"><h2><i class="fas fa-history"></i> 最近支出</h2></div><div class="card-body"><div id="recent-expenses" class="records-list"><p class="empty-msg">載入中...</p></div></div></div>
         </div>
+        <!-- 收入 -->
         <div id="tab-income" class="tab-content">
             <div class="card">
                 <div class="card-header"><h2><i class="fas fa-plus-circle text-success"></i> 新增收入</h2></div>
                 <div class="card-body">
-                    <div class="form-row"><div class="form-group"><label>金額 *</label><input type="number" id="income-amount" placeholder="0.00" step="0.01" min="0"></div><div class="form-group"><label>日期 *</label><input type="date" id="income-date"></div></div>
-                    <div class="form-row"><div class="form-group"><label>形式 *</label><select id="income-method"><option value="現金">💵 現金</option><option value="銀行">🏦 銀行</option></select></div><div class="form-group"><label>種類 *</label><select id="income-category"><option value="">-- 選擇 --</option></select></div></div>
-                    <div class="form-row"><div class="form-group"><label>Project</label><select id="income-project"><option value="">-- 無 --</option></select></div><div class="form-group"><label>備註</label><input type="text" id="income-note" placeholder="選填"></div></div>
+                    <div class="form-row">
+                        <div class="form-group"><label>金額 *</label><input type="number" id="income-amount" placeholder="0.00" step="0.01" min="0" oninput="convertCurrency('income')"></div>
+                        <div class="form-group"><label>貨幣</label><select id="income-currency" onchange="convertCurrency('income')"></select></div>
+                        <div class="form-group"><label>日期 *</label><input type="date" id="income-date"></div>
+                    </div>
+                    <div id="income-converted" class="converted-amount"></div>
+                    <div class="form-row">
+                        <div class="form-group"><label>形式 *</label><select id="income-method"><option value="現金">💵 現金</option><option value="銀行">🏦 銀行</option></select></div>
+                        <div class="form-group"><label>種類 *</label><select id="income-category"><option value="">-- 選擇 --</option></select></div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group"><label>Project</label><select id="income-project"><option value="">-- 無 --</option></select></div>
+                        <div class="form-group"><label>備註</label><input type="text" id="income-note" placeholder="選填"></div>
+                    </div>
                     <button class="btn btn-success btn-full" onclick="addIncome()"><i class="fas fa-plus"></i> 新增收入</button>
                 </div>
             </div>
             <div class="card mt-20"><div class="card-header"><h2><i class="fas fa-history"></i> 最近收入</h2></div><div class="card-body"><div id="recent-incomes" class="records-list"><p class="empty-msg">載入中...</p></div></div></div>
         </div>
+        <!-- 記錄 -->
         <div id="tab-records" class="tab-content">
             <div class="card">
                 <div class="card-header">
@@ -90,24 +234,61 @@
                 <div class="card-body"><div id="all-records" class="records-list"><p class="empty-msg">載入中...</p></div></div>
             </div>
         </div>
+        <!-- 報表 -->
         <div id="tab-reports" class="tab-content">
             <div class="card">
                 <div class="card-header"><h2><i class="fas fa-chart-pie"></i> 財務報表</h2></div>
                 <div class="card-body"><div class="form-row"><div class="form-group"><label>開始日期</label><input type="date" id="report-start"></div><div class="form-group"><label>結束日期</label><input type="date" id="report-end"></div><div class="form-group" style="display:flex;align-items:flex-end"><button class="btn btn-primary" onclick="generateReports()"><i class="fas fa-search"></i> 生成</button></div></div></div>
             </div>
             <div class="summary-cards mt-20" id="report-summary" style="display:none;">
-                <div class="summary-card income-card"><div class="summary-icon"><i class="fas fa-arrow-up"></i></div><div class="summary-info"><span class="summary-label">總收入</span><span class="summary-value" id="report-total-income">\$0</span></div></div>
-                <div class="summary-card expense-card"><div class="summary-icon"><i class="fas fa-arrow-down"></i></div><div class="summary-info"><span class="summary-label">總支出</span><span class="summary-value" id="report-total-expense">\$0</span></div></div>
-                <div class="summary-card net-card"><div class="summary-icon"><i class="fas fa-balance-scale"></i></div><div class="summary-info"><span class="summary-label">淨額</span><span class="summary-value" id="report-net">\$0</span></div></div>
+                <div class="summary-card income-card"><div class="summary-icon"><i class="fas fa-arrow-up"></i></div><div class="summary-info"><span class="summary-label">總收入</span><span class="summary-value" id="report-total-income">0</span></div></div>
+                <div class="summary-card expense-card"><div class="summary-icon"><i class="fas fa-arrow-down"></i></div><div class="summary-info"><span class="summary-label">總支出</span><span class="summary-value" id="report-total-expense">0</span></div></div>
+                <div class="summary-card net-card"><div class="summary-icon"><i class="fas fa-balance-scale"></i></div><div class="summary-info"><span class="summary-label">淨額</span><span class="summary-value" id="report-net">0</span></div></div>
             </div>
             <div class="card mt-20" id="report-income-section" style="display:none;"><div class="card-header"><h2><i class="fas fa-arrow-up text-success"></i> 收入報表</h2></div><div class="card-body"><div id="report-income-detail" class="report-table-container"></div></div></div>
             <div class="card mt-20" id="report-expense-section" style="display:none;"><div class="card-header"><h2><i class="fas fa-arrow-down text-danger"></i> 支出報表</h2></div><div class="card-body"><div id="report-expense-detail" class="report-table-container"></div></div></div>
-            <div class="card mt-20" id="report-all-section" style="display:none;"><div class="card-header"><h2><i class="fas fa-exchange-alt"></i> 總表</h2></div><div class="card-body"><div id="report-all-detail" class="report-table-container"></div></div></div>
+            <div class="card mt-20" id="report-all-section" style="display:none;"><div class="card-header"><h2><i class="fas fa-exchange-alt"></i> 收支總表</h2></div><div class="card-body"><div id="report-all-detail" class="report-table-container"></div></div></div>
         </div>
+        <!-- 設定 -->
         <div id="tab-settings" class="tab-content">
             <div class="settings-grid">
+                <!-- Base Currency -->
+                <div class="card">
+                    <div class="card-header"><h2><i class="fas fa-coins"></i> 基礎貨幣</h2></div>
+                    <div class="card-body">
+                        <div class="form-group"><label>Base Currency</label>
+                            <select id="settings-base-currency" onchange="saveBaseCurrency()">
+                                <option value="GBP">🇬🇧 GBP</option><option value="USD">🇺🇸 USD</option><option value="EUR">🇪🇺 EUR</option>
+                                <option value="HKD">🇭🇰 HKD</option><option value="CNY">🇨🇳 CNY</option><option value="JPY">🇯🇵 JPY</option>
+                                <option value="TWD">🇹🇼 TWD</option><option value="SGD">🇸🇬 SGD</option><option value="AUD">🇦🇺 AUD</option>
+                                <option value="CAD">🇨🇦 CAD</option><option value="CHF">🇨🇭 CHF</option><option value="MYR">🇲🇾 MYR</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <!-- Currency Rates -->
+                <div class="card">
+                    <div class="card-header"><h2><i class="fas fa-exchange-alt"></i> 貨幣匯率</h2></div>
+                    <div class="card-body">
+                        <p style="font-size:12px;color:var(--gray-500);margin-bottom:12px">1 <span id="base-currency-label">GBP</span> = ?</p>
+                        <div class="add-item-row">
+                            <select id="new-currency-code" style="width:100px;padding:8px;border:2px solid var(--gray-200);border-radius:var(--radius-sm);font-size:13px">
+                                <option value="USD">USD</option><option value="EUR">EUR</option><option value="GBP">GBP</option>
+                                <option value="HKD">HKD</option><option value="CNY">CNY</option><option value="JPY">JPY</option>
+                                <option value="TWD">TWD</option><option value="SGD">SGD</option><option value="AUD">AUD</option>
+                                <option value="CAD">CAD</option><option value="CHF">CHF</option><option value="MYR">MYR</option>
+                            </select>
+                            <input type="number" id="new-currency-rate" placeholder="匯率" step="0.0001" min="0" style="width:100px">
+                            <button class="btn btn-sm btn-primary" onclick="addCurrencyRate()"><i class="fas fa-plus"></i></button>
+                        </div>
+                        <div id="currency-rates-list"></div>
+                    </div>
+                </div>
+                <!-- 支出種類 -->
                 <div class="card"><div class="card-header"><h2><i class="fas fa-tags text-danger"></i> 支出種類</h2></div><div class="card-body"><div class="add-item-row"><input type="text" id="new-expense-category" placeholder="新增" onkeypress="if(event.key==='Enter')addCategory('expense')"><button class="btn btn-sm btn-primary" onclick="addCategory('expense')"><i class="fas fa-plus"></i></button></div><div id="expense-categories-list" class="tags-list"></div></div></div>
+                <!-- 收入種類 -->
                 <div class="card"><div class="card-header"><h2><i class="fas fa-tags text-success"></i> 收入種類</h2></div><div class="card-body"><div class="add-item-row"><input type="text" id="new-income-category" placeholder="新增" onkeypress="if(event.key==='Enter')addCategory('income')"><button class="btn btn-sm btn-primary" onclick="addCategory('income')"><i class="fas fa-plus"></i></button></div><div id="income-categories-list" class="tags-list"></div></div></div>
+                <!-- Projects -->
                 <div class="card"><div class="card-header"><h2><i class="fas fa-project-diagram"></i> Projects</h2></div><div class="card-body"><div class="add-item-row"><input type="text" id="new-project" placeholder="新增" onkeypress="if(event.key==='Enter')addProject()"><button class="btn btn-sm btn-primary" onclick="addProject()"><i class="fas fa-plus"></i></button></div><div id="projects-list" class="tags-list"></div></div></div>
             </div>
         </div>
@@ -129,8 +310,8 @@
 <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
 
 <script>
-// ⚠️ 請填入你的 Firebase 設定
-const firebaseConfig = {
+// ⚠️ 填入你的 Firebase 設定
+var firebaseConfig = {
     apiKey: "AIzaSyAcZrnL8Aze4ZIlh6RgornQ0oBd6xa092M",
     authDomain: "simple-books-700d7.firebaseapp.com",
     projectId: "simple-books-700d7",
@@ -139,642 +320,429 @@ const firebaseConfig = {
     appId: "1:1066770660576:web:08637e911bb3852fbaa485",
     measurementId: "G-NRS5F5X9ZS"
 };
-
 firebase.initializeApp(firebaseConfig);
-const auth = firebase.auth();
-const db = firebase.firestore();
-const googleProvider = new firebase.auth.GoogleAuthProvider();
+var auth = firebase.auth();
+var db = firebase.firestore();
+var googleProvider = new firebase.auth.GoogleAuthProvider();
 
-// ================= 認證函數 =================
+// ===== 全局變量 =====
+var currentUserId = null;
+var userName = '';
+var baseCurrency = 'GBP';
+var currencyRates = {};
+var expenseCategories = [];
+var incomeCategories = [];
+var projects = [];
+var DEF_EXP = ['餐飲','交通','住房','購物','娛樂','醫療','教育','其他'];
+var DEF_INC = ['薪資','投資','兼職','獎金','其他'];
+
+// ===== 認證 =====
 function showLogin() {
     document.getElementById('login-form').style.display = 'block';
     document.getElementById('register-form').style.display = 'none';
     document.getElementById('auth-error').style.display = 'none';
 }
-
 function showRegister() {
     document.getElementById('login-form').style.display = 'none';
     document.getElementById('register-form').style.display = 'block';
     document.getElementById('auth-error').style.display = 'none';
 }
-
 function showAuthError(msg) {
     document.getElementById('auth-error').textContent = msg;
     document.getElementById('auth-error').style.display = 'block';
 }
 
-async function loginWithEmail() {
-    const email = document.getElementById('login-email').value.trim();
-    const password = document.getElementById('login-password').value;
-    if (!email || !password) {
-        showAuthError('請填入電子郵件和密碼');
-        return;
-    }
-    try {
-        await auth.signInWithEmailAndPassword(email, password);
-        document.getElementById('login-email').value = '';
-        document.getElementById('login-password').value = '';
-    } catch (error) {
-        showAuthError(getAuthErr(error.code));
-    }
+function loginWithEmail() {
+    var email = document.getElementById('login-email').value.trim();
+    var password = document.getElementById('login-password').value;
+    if (!email || !password) { showAuthError('請填入電子郵件和密碼'); return; }
+    auth.signInWithEmailAndPassword(email, password).catch(function(e) { showAuthError(getAuthErr(e.code)); });
 }
 
-async function registerWithEmail() {
-    const email = document.getElementById('register-email').value.trim();
-    const pw = document.getElementById('register-password').value;
-    const pw2 = document.getElementById('register-password-confirm').value;
-    if (!email || !pw) {
-        showAuthError('請填入電子郵件和密碼');
-        return;
-    }
-    if (pw !== pw2) {
-        showAuthError('兩次密碼不一致');
-        return;
-    }
-    if (pw.length < 6) {
-        showAuthError('密碼至少需要6個字元');
-        return;
-    }
-    try {
-        await auth.createUserWithEmailAndPassword(email, pw);
-        document.getElementById('register-email').value = '';
-        document.getElementById('register-password').value = '';
-        document.getElementById('register-password-confirm').value = '';
-    } catch (error) {
-        showAuthError(getAuthErr(error.code));
-    }
+function registerWithEmail() {
+    var name = document.getElementById('register-name').value.trim();
+    var email = document.getElementById('register-email').value.trim();
+    var pw = document.getElementById('register-password').value;
+    var pw2 = document.getElementById('register-password-confirm').value;
+    if (!name) { showAuthError('請輸入名稱'); return; }
+    if (!email || !pw) { showAuthError('請填入電子郵件和密碼'); return; }
+    if (pw !== pw2) { showAuthError('兩次密碼不一致'); return; }
+    if (pw.length < 6) { showAuthError('密碼至少需要6個字元'); return; }
+    auth.createUserWithEmailAndPassword(email, pw).then(function(cred) {
+        return cred.user.updateProfile({ displayName: name });
+    }).then(function() {
+        return db.collection('users').doc(auth.currentUser.uid).collection('settings').doc('profile').set({ name: name });
+    }).catch(function(e) { showAuthError(getAuthErr(e.code)); });
 }
 
-async function loginWithGoogle() {
-    try {
-        await auth.signInWithPopup(googleProvider);
-    } catch (error) {
-        if (error.code !== 'auth/popup-closed-by-user') {
-            showAuthError(getAuthErr(error.code));
-        }
-    }
+function loginWithGoogle() {
+    auth.signInWithPopup(googleProvider).catch(function(e) {
+        if (e.code !== 'auth/popup-closed-by-user') showAuthError(getAuthErr(e.code));
+    });
 }
 
-async function logout() {
-    try {
-        await auth.signOut();
-    } catch (error) {
-        showToast('登出失敗', 'error');
-    }
+function logout() { auth.signOut(); }
+
+function getAuthErr(c) {
+    var m = {'auth/user-not-found':'此電子郵件尚未註冊','auth/wrong-password':'密碼錯誤','auth/email-already-in-use':'此電子郵件已被註冊','auth/weak-password':'密碼至少需要6個字元','auth/invalid-email':'電子郵件格式不正確','auth/too-many-requests':'嘗試次數過多','auth/invalid-credential':'電子郵件或密碼錯誤'};
+    return m[c] || '發生錯誤 (' + c + ')';
 }
 
-function getAuthErr(code) {
-    const msgs = {
-        'auth/user-not-found': '此電子郵件尚未註冊',
-        'auth/wrong-password': '密碼錯誤',
-        'auth/email-already-in-use': '此電子郵件已被註冊',
-        'auth/weak-password': '密碼至少需要6個字元',
-        'auth/invalid-email': '電子郵件格式不正確',
-        'auth/too-many-requests': '嘗試次數過多，請稍後再試',
-        'auth/network-request-failed': '網路連線失敗',
-        'auth/invalid-credential': '電子郵件或密碼錯誤'
-    };
-    return msgs[code] || '發生錯誤 (' + code + ')';
+function saveGoogleName() {
+    var name = document.getElementById('google-name-input').value.trim();
+    if (!name) { showToast('請輸入名稱', 'error'); return; }
+    auth.currentUser.updateProfile({ displayName: name }).then(function() {
+        return db.collection('users').doc(currentUserId).collection('settings').doc('profile').set({ name: name });
+    }).then(function() {
+        userName = name;
+        document.getElementById('user-display-name').textContent = name;
+        document.getElementById('name-modal').style.display = 'none';
+        showToast('名稱已設定', 'success');
+    });
 }
 
-auth.onAuthStateChanged(async (user) => {
+auth.onAuthStateChanged(function(user) {
     if (user) {
+        currentUserId = user.uid;
         document.getElementById('auth-container').style.display = 'none';
         document.getElementById('app-container').style.display = 'block';
-        document.getElementById('user-display').textContent = user.email || user.displayName || '使用者';
-        await initializeApp(user.uid);
+        // 顯示日期
+        var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+        var now = new Date();
+        document.getElementById('user-display-date').textContent = now.getDate() + ' ' + months[now.getMonth()] + ' ' + now.getFullYear();
+        // 載入名稱
+        db.collection('users').doc(user.uid).collection('settings').doc('profile').get().then(function(doc) {
+            if (doc.exists && doc.data().name) {
+                userName = doc.data().name;
+                document.getElementById('user-display-name').textContent = userName;
+            } else if (user.displayName) {
+                userName = user.displayName;
+                document.getElementById('user-display-name').textContent = userName;
+                db.collection('users').doc(user.uid).collection('settings').doc('profile').set({ name: userName });
+            } else {
+                document.getElementById('name-modal').style.display = 'flex';
+            }
+        });
+        initializeApp(user.uid);
     } else {
         document.getElementById('auth-container').style.display = 'flex';
         document.getElementById('app-container').style.display = 'none';
     }
 });
 
-// ================= 主應用 =================
-let currentUserId = null;
-let expenseCategories = [];
-let incomeCategories = [];
-let projects = [];
-
-const DEF_EXP_CATS = ['餐飲','交通','住房','購物','娛樂','醫療','教育','其他'];
-const DEF_INC_CATS = ['薪資','投資','兼職','獎金','其他'];
-
-async function initializeApp(uid) {
-    currentUserId = uid;
-    const today = new Date().toISOString().split('T')[0];
+// ===== 初始化 =====
+function initializeApp(uid) {
+    var today = new Date().toISOString().split('T')[0];
     document.getElementById('expense-date').value = today;
     document.getElementById('income-date').value = today;
-    const now = new Date();
-    const fd = new Date(now.getFullYear(), now.getMonth(), 1).toISOString().split('T')[0];
-    const ld = new Date(now.getFullYear(), now.getMonth()+1, 0).toISOString().split('T')[0];
+    var now = new Date();
+    var fd = new Date(now.getFullYear(), now.getMonth(), 1).toISOString().split('T')[0];
+    var ld = new Date(now.getFullYear(), now.getMonth()+1, 0).toISOString().split('T')[0];
     document.getElementById('report-start').value = fd;
     document.getElementById('report-end').value = ld;
     document.getElementById('records-filter-start').value = fd;
     document.getElementById('records-filter-end').value = ld;
-    await loadCategories();
-    await loadProjects();
+    loadBaseCurrency();
+    loadCurrencyRates();
+    loadCategories();
+    loadProjects();
     loadRecentExpenses();
     loadRecentIncomes();
 }
 
-function showToast(msg, type = 'info') {
-    const container = document.getElementById('toast-container');
-    const toast = document.createElement('div');
-    toast.className = `toast ${type}`;
-    toast.textContent = msg;
-    container.appendChild(toast);
-    setTimeout(() => toast.remove(), 3000);
+function showToast(msg, type) {
+    type = type || 'info';
+    var c = document.getElementById('toast-container');
+    var t = document.createElement('div');
+    t.className = 'toast ' + type; t.textContent = msg; c.appendChild(t);
+    setTimeout(function() { t.remove(); }, 3000);
 }
 
 function switchTab(name) {
-    document.querySelectorAll('.tab-btn').forEach(b => b.classList.toggle('active', b.dataset.tab === name));
-    document.querySelectorAll('.tab-content').forEach(c => c.classList.toggle('active', c.id === `tab-${name}`));
+    document.querySelectorAll('.tab-btn').forEach(function(b) { b.classList.toggle('active', b.dataset.tab === name); });
+    document.querySelectorAll('.tab-content').forEach(function(c) { c.classList.toggle('active', c.id === 'tab-' + name); });
     if (name === 'records') loadAllRecords();
 }
 
-// ================= 分類 =================
-async function loadCategories() {
-    try {
-        let doc = await db.collection('users').doc(currentUserId).collection('settings').doc('expenseCategories').get();
-        if (doc.exists) {
-            expenseCategories = doc.data().list || [];
-        } else {
-            expenseCategories = [...DEF_EXP_CATS];
-            await saveCats('expense');
+// ===== 貨幣 =====
+function loadBaseCurrency() {
+    db.collection('users').doc(currentUserId).collection('settings').doc('currency').get().then(function(doc) {
+        if (doc.exists && doc.data().base) {
+            baseCurrency = doc.data().base;
         }
-        doc = await db.collection('users').doc(currentUserId).collection('settings').doc('incomeCategories').get();
-        if (doc.exists) {
-            incomeCategories = doc.data().list || [];
-        } else {
-            incomeCategories = [...DEF_INC_CATS];
-            await saveCats('income');
-        }
-        updateCatDD();
-        renderCatTags();
-    } catch (e) {
-        console.error(e);
-        showToast('載入分類失敗', 'error');
+        document.getElementById('settings-base-currency').value = baseCurrency;
+        document.getElementById('base-currency-label').textContent = baseCurrency;
+        updateCurrencyDropdowns();
+    });
+}
+
+function saveBaseCurrency() {
+    baseCurrency = document.getElementById('settings-base-currency').value;
+    document.getElementById('base-currency-label').textContent = baseCurrency;
+    db.collection('users').doc(currentUserId).collection('settings').doc('currency').set({ base: baseCurrency }, { merge: true });
+    updateCurrencyDropdowns();
+    showToast('基礎貨幣已設為 ' + baseCurrency, 'success');
+}
+
+function loadCurrencyRates() {
+    db.collection('users').doc(currentUserId).collection('settings').doc('currencyRates').get().then(function(doc) {
+        if (doc.exists) { currencyRates = doc.data().rates || {}; }
+        renderCurrencyRates();
+        updateCurrencyDropdowns();
+    });
+}
+
+function saveCurrencyRates() {
+    db.collection('users').doc(currentUserId).collection('settings').doc('currencyRates').set({ rates: currencyRates });
+}
+
+function addCurrencyRate() {
+    var code = document.getElementById('new-currency-code').value;
+    var rate = parseFloat(document.getElementById('new-currency-rate').value);
+    if (!rate || rate <= 0) { showToast('請輸入有效匯率', 'error'); return; }
+    currencyRates[code] = rate;
+    saveCurrencyRates();
+    renderCurrencyRates();
+    updateCurrencyDropdowns();
+    document.getElementById('new-currency-rate').value = '';
+    showToast('已設定 ' + baseCurrency + ' 1 = ' + code + ' ' + rate, 'success');
+}
+
+function removeCurrencyRate(code) {
+    delete currencyRates[code];
+    saveCurrencyRates();
+    renderCurrencyRates();
+    updateCurrencyDropdowns();
+}
+
+function renderCurrencyRates() {
+    var html = '';
+    Object.keys(currencyRates).forEach(function(code) {
+        html += '<div class="currency-row"><span class="curr-name">' + baseCurrency + ' 1 = ' + code + ' ' + currencyRates[code] + '</span><button class="btn btn-xs btn-outline" onclick="removeCurrencyRate(\'' + code + '\')"><i class="fas fa-trash"></i></button></div>';
+    });
+    document.getElementById('currency-rates-list').innerHTML = html || '<p style="color:var(--gray-400);font-size:13px">尚未設定匯率</p>';
+}
+
+function updateCurrencyDropdowns() {
+    var options = '<option value="' + baseCurrency + '">' + baseCurrency + ' (基礎)</option>';
+    Object.keys(currencyRates).forEach(function(code) {
+        options += '<option value="' + code + '">' + code + '</option>';
+    });
+    document.getElementById('expense-currency').innerHTML = options;
+    document.getElementById('income-currency').innerHTML = options;
+}
+
+function convertToBase(amount, currency) {
+    if (currency === baseCurrency) return amount;
+    var rate = currencyRates[currency];
+    if (!rate) return amount;
+    return amount / rate;
+}
+
+function convertCurrency(type) {
+    var amount = parseFloat(document.getElementById(type + '-amount').value);
+    var currency = document.getElementById(type + '-currency').value;
+    var el = document.getElementById(type + '-converted');
+    if (!amount || amount <= 0 || currency === baseCurrency) {
+        el.style.display = 'none';
+        return;
     }
+    var baseAmt = convertToBase(amount, currency);
+    el.textContent = '≈ ' + baseCurrency + ' ' + baseAmt.toFixed(2);
+    el.style.display = 'block';
 }
 
-async function saveCats(type) {
-    const name = type === 'expense' ? 'expenseCategories' : 'incomeCategories';
-    const list = type === 'expense' ? expenseCategories : incomeCategories;
-    await db.collection('users').doc(currentUserId).collection('settings').doc(name).set({ list });
+// ===== 分類 =====
+function loadCategories() {
+    db.collection('users').doc(currentUserId).collection('settings').doc('expenseCategories').get().then(function(doc) {
+        if (doc.exists) { expenseCategories = doc.data().list || []; } else { expenseCategories = DEF_EXP.slice(); saveCats('expense'); }
+        updateCatDD(); renderCatTags();
+    });
+    db.collection('users').doc(currentUserId).collection('settings').doc('incomeCategories').get().then(function(doc) {
+        if (doc.exists) { incomeCategories = doc.data().list || []; } else { incomeCategories = DEF_INC.slice(); saveCats('income'); }
+        updateCatDD(); renderCatTags();
+    });
 }
-
+function saveCats(type) {
+    var name = type === 'expense' ? 'expenseCategories' : 'incomeCategories';
+    var list = type === 'expense' ? expenseCategories : incomeCategories;
+    db.collection('users').doc(currentUserId).collection('settings').doc(name).set({ list: list });
+}
 function updateCatDD() {
-    let html = '<option value="">-- 選擇 --</option>';
-    expenseCategories.forEach(c => html += `<option value="${c}">${c}</option>`);
-    document.getElementById('expense-category').innerHTML = html;
-    
-    html = '<option value="">-- 選擇 --</option>';
-    incomeCategories.forEach(c => html += `<option value="${c}">${c}</option>`);
-    document.getElementById('income-category').innerHTML = html;
+    var h = '<option value="">-- 選擇 --</option>';
+    expenseCategories.forEach(function(c) { h += '<option value="' + c + '">' + c + '</option>'; });
+    document.getElementById('expense-category').innerHTML = h;
+    h = '<option value="">-- 選擇 --</option>';
+    incomeCategories.forEach(function(c) { h += '<option value="' + c + '">' + c + '</option>'; });
+    document.getElementById('income-category').innerHTML = h;
 }
-
 function renderCatTags() {
-    let html = '';
-    expenseCategories.forEach(c => {
-        html += `<span class="tag-item">${c} <i class="fas fa-times tag-delete" onclick="removeCat('expense','${c}')"></i></span>`;
-    });
-    document.getElementById('expense-categories-list').innerHTML = html;
-    
-    html = '';
-    incomeCategories.forEach(c => {
-        html += `<span class="tag-item">${c} <i class="fas fa-times tag-delete" onclick="removeCat('income','${c}')"></i></span>`;
-    });
-    document.getElementById('income-categories-list').innerHTML = html;
+    var h = '';
+    expenseCategories.forEach(function(c) { h += '<span class="tag-item">' + c + ' <i class="fas fa-times tag-delete" onclick="removeCat(\'expense\',\'' + c + '\')"></i></span>'; });
+    document.getElementById('expense-categories-list').innerHTML = h;
+    h = '';
+    incomeCategories.forEach(function(c) { h += '<span class="tag-item">' + c + ' <i class="fas fa-times tag-delete" onclick="removeCat(\'income\',\'' + c + '\')"></i></span>'; });
+    document.getElementById('income-categories-list').innerHTML = h;
+}
+function addCategory(type) {
+    var id = type === 'expense' ? 'new-expense-category' : 'new-income-category';
+    var inp = document.getElementById(id); var n = inp.value.trim(); if (!n) return;
+    var list = type === 'expense' ? expenseCategories : incomeCategories;
+    if (list.indexOf(n) !== -1) { showToast('已存在', 'error'); return; }
+    list.push(n); saveCats(type); updateCatDD(); renderCatTags(); inp.value = '';
+    showToast('已新增: ' + n, 'success');
+}
+function removeCat(type, n) {
+    if (!confirm('確定刪除「' + n + '」？')) return;
+    if (type === 'expense') { expenseCategories = expenseCategories.filter(function(c){return c!==n;}); }
+    else { incomeCategories = incomeCategories.filter(function(c){return c!==n;}); }
+    saveCats(type); updateCatDD(); renderCatTags(); showToast('已刪除: ' + n, 'info');
 }
 
-async function addCategory(type) {
-    const inputId = type === 'expense' ? 'new-expense-category' : 'new-income-category';
-    const input = document.getElementById(inputId);
-    const name = input.value.trim();
-    if (!name) return;
-    
-    const list = type === 'expense' ? expenseCategories : incomeCategories;
-    if (list.includes(name)) {
-        showToast('此種類已存在', 'error');
-        return;
-    }
-    list.push(name);
-    await saveCats(type);
-    updateCatDD();
-    renderCatTags();
-    input.value = '';
-    showToast(`已新增: ${name}`, 'success');
-}
-
-async function removeCat(type, name) {
-    if (!confirm(`確定刪除「${name}」？`)) return;
-    if (type === 'expense') {
-        expenseCategories = expenseCategories.filter(c => c !== name);
-    } else {
-        incomeCategories = incomeCategories.filter(c => c !== name);
-    }
-    await saveCats(type);
-    updateCatDD();
-    renderCatTags();
-    showToast(`已刪除: ${name}`, 'info');
-}
-
-// ================= Project =================
-async function loadProjects() {
-    try {
-        const doc = await db.collection('users').doc(currentUserId).collection('settings').doc('projects').get();
+// ===== Project =====
+function loadProjects() {
+    db.collection('users').doc(currentUserId).collection('settings').doc('projects').get().then(function(doc) {
         projects = doc.exists ? (doc.data().list || []) : [];
-        updateProjDD();
-        renderProjTags();
-    } catch (e) {
-        console.error(e);
-    }
-}
-
-async function saveProjects() {
-    await db.collection('users').doc(currentUserId).collection('settings').doc('projects').set({ list: projects });
-}
-
-function updateProjDD() {
-    let html = '<option value="">-- 無 --</option>';
-    projects.forEach(p => html += `<option value="${p}">${p}</option>`);
-    document.getElementById('expense-project').innerHTML = html;
-    document.getElementById('income-project').innerHTML = html;
-}
-
-function renderProjTags() {
-    let html = '';
-    projects.forEach(p => {
-        html += `<span class="tag-item">${p} <i class="fas fa-times tag-delete" onclick="removeProject('${p}')"></i></span>`;
+        updateProjDD(); renderProjTags();
     });
-    document.getElementById('projects-list').innerHTML = html;
 }
-
-async function addProject() {
-    const input = document.getElementById('new-project');
-    const name = input.value.trim();
-    if (!name) return;
-    if (projects.includes(name)) {
-        showToast('已存在', 'error');
-        return;
-    }
-    projects.push(name);
-    await saveProjects();
-    updateProjDD();
-    renderProjTags();
-    input.value = '';
-    showToast(`已新增: ${name}`, 'success');
+function saveProjects() { db.collection('users').doc(currentUserId).collection('settings').doc('projects').set({ list: projects }); }
+function updateProjDD() {
+    var h = '<option value="">-- 無 --</option>';
+    projects.forEach(function(p) { h += '<option value="' + p + '">' + p + '</option>'; });
+    document.getElementById('expense-project').innerHTML = h;
+    document.getElementById('income-project').innerHTML = h;
 }
-
-async function removeProject(name) {
-    if (!confirm(`確定刪除「${name}」？`)) return;
-    projects = projects.filter(p => p !== name);
-    await saveProjects();
-    updateProjDD();
-    renderProjTags();
-    showToast(`已刪除: ${name}`, 'info');
+function renderProjTags() {
+    var h = '';
+    projects.forEach(function(p) { h += '<span class="tag-item">' + p + ' <i class="fas fa-times tag-delete" onclick="removeProject(\'' + p + '\')"></i></span>'; });
+    document.getElementById('projects-list').innerHTML = h;
 }
+function addProject() {
+    var inp = document.getElementById('new-project'); var n = inp.value.trim(); if (!n) return;
+    if (projects.indexOf(n) !== -1) { showToast('已存在', 'error'); return; }
+    projects.push(n); saveProjects(); updateProjDD(); renderProjTags(); inp.value = '';
+    showToast('已新增: ' + n, 'success');
+}
+function removeProject(n) {
+    if (!confirm('確定刪除「' + n + '」？')) return;
+    projects = projects.filter(function(p){return p!==n;});
+    saveProjects(); updateProjDD(); renderProjTags(); showToast('已刪除: ' + n, 'info');
+}
+</script>
 
-// ================= 新增支出/收入 =================
-async function addExpense() {
-    const a = parseFloat(document.getElementById('expense-amount').value);
-    const d = document.getElementById('expense-date').value;
-    const m = document.getElementById('expense-method').value;
-    const c = document.getElementById('expense-category').value;
-    const p = document.getElementById('expense-project').value;
-    const n = document.getElementById('expense-note').value.trim();
-
-    if (!a || a <= 0) {
-        showToast('請輸入有效金額', 'error');
-        return;
-    }
-    if (!d) {
-        showToast('請選擇日期', 'error');
-        return;
-    }
-    if (!c) {
-        showToast('請選擇種類', 'error');
-        return;
-    }
-
-    try {
-        await db.collection('users').doc(currentUserId).collection('expenses').add({
-            amount: a,
-            date: d,
-            method: m,
-            category: c,
-            project: p,
-            note: n,
-            createdAt: firebase.firestore.FieldValue.serverTimestamp()
-        });
+<script>
+// ===== 新增支出 =====
+function addExpense() {
+    var a = parseFloat(document.getElementById('expense-amount').value);
+    var cur = document.getElementById('expense-currency').value;
+    var d = document.getElementById('expense-date').value;
+    var m = document.getElementById('expense-method').value;
+    var c = document.getElementById('expense-category').value;
+    var p = document.getElementById('expense-project').value;
+    var n = document.getElementById('expense-note').value.trim();
+    if (!a || a <= 0) { showToast('請輸入有效金額', 'error'); return; }
+    if (!d) { showToast('請選擇日期', 'error'); return; }
+    if (!c) { showToast('請選擇種類', 'error'); return; }
+    var baseAmount = convertToBase(a, cur);
+    db.collection('users').doc(currentUserId).collection('expenses').add({
+        amount: baseAmount, originalAmount: a, currency: cur,
+        date: d, method: m, category: c, project: p, note: n,
+        createdAt: firebase.firestore.FieldValue.serverTimestamp()
+    }).then(function() {
         document.getElementById('expense-amount').value = '';
         document.getElementById('expense-note').value = '';
-        showToast(`已記錄支出 
-$$
-{a.toFixed(2)}`, 'success');
+        document.getElementById('expense-converted').style.display = 'none';
+        showToast('已記錄支出 ' + baseCurrency + ' ' + baseAmount.toFixed(2), 'success');
         loadRecentExpenses();
-    } catch (e) {
-        console.error(e);
-        showToast('新增失敗', 'error');
-    }
+    }).catch(function(e) { console.error(e); showToast('新增失敗', 'error'); });
 }
 
-async function addIncome() {
-    const a = parseFloat(document.getElementById('income-amount').value);
-    const d = document.getElementById('income-date').value;
-    const m = document.getElementById('income-method').value;
-    const c = document.getElementById('income-category').value;
-    const p = document.getElementById('income-project').value;
-    const n = document.getElementById('income-note').value.trim();
-
-    if (!a || a <= 0) {
-        showToast('請輸入有效金額', 'error');
-        return;
-    }
-    if (!d) {
-        showToast('請選擇日期', 'error');
-        return;
-    }
-    if (!c) {
-        showToast('請選擇種類', 'error');
-        return;
-    }
-
-    try {
-        await db.collection('users').doc(currentUserId).collection('incomes').add({
-            amount: a,
-            date: d,
-            method: m,
-            category: c,
-            project: p,
-            note: n,
-            createdAt: firebase.firestore.FieldValue.serverTimestamp()
-        });
+// ===== 新增收入 =====
+function addIncome() {
+    var a = parseFloat(document.getElementById('income-amount').value);
+    var cur = document.getElementById('income-currency').value;
+    var d = document.getElementById('income-date').value;
+    var m = document.getElementById('income-method').value;
+    var c = document.getElementById('income-category').value;
+    var p = document.getElementById('income-project').value;
+    var n = document.getElementById('income-note').value.trim();
+    if (!a || a <= 0) { showToast('請輸入有效金額', 'error'); return; }
+    if (!d) { showToast('請選擇日期', 'error'); return; }
+    if (!c) { showToast('請選擇種類', 'error'); return; }
+    var baseAmount = convertToBase(a, cur);
+    db.collection('users').doc(currentUserId).collection('incomes').add({
+        amount: baseAmount, originalAmount: a, currency: cur,
+        date: d, method: m, category: c, project: p, note: n,
+        createdAt: firebase.firestore.FieldValue.serverTimestamp()
+    }).then(function() {
         document.getElementById('income-amount').value = '';
         document.getElementById('income-note').value = '';
-        showToast(`已記錄收入
-$$
-{a.toFixed(2)}`, 'success');
+        document.getElementById('income-converted').style.display = 'none';
+        showToast('已記錄收入 ' + baseCurrency + ' ' + baseAmount.toFixed(2), 'success');
         loadRecentIncomes();
-    } catch (e) {
-        console.error(e);
-        showToast('新增失敗', 'error');
-    }
+    }).catch(function(e) { console.error(e); showToast('新增失敗', 'error'); });
 }
 
-// ================= 載入記錄 =================
-async function loadRecentExpenses() {
-    const container = document.getElementById('recent-expenses');
-    container.innerHTML = '<p class="empty-msg"><span class="loading-spinner"></span> 載入中...</p>';
-    try {
-        const snap = await db.collection('users').doc(currentUserId).collection('expenses').orderBy('date', 'desc').limit(10).get();
-        if (snap.empty) {
-            container.innerHTML = '<p class="empty-msg">尚無支出記錄</p>';
-            return;
-        }
-        container.innerHTML = '';
-        snap.forEach(doc => {
-            container.innerHTML += createRecordHTML(doc.id, doc.data(), 'expense');
-        });
-    } catch (e) {
-        container.innerHTML = '<p class="empty-msg">載入失敗</p>';
-    }
+// ===== 載入記錄 =====
+function loadRecentExpenses() {
+    var ct = document.getElementById('recent-expenses');
+    ct.innerHTML = '<p class="empty-msg"><span class="loading-spinner"></span> 載入中...</p>';
+    db.collection('users').doc(currentUserId).collection('expenses').orderBy('date', 'desc').limit(10).get().then(function(snap) {
+        if (snap.empty) { ct.innerHTML = '<p class="empty-msg">尚無支出記錄</p>'; return; }
+        ct.innerHTML = '';
+        snap.forEach(function(doc) { ct.innerHTML += createRecordHTML(doc.id, doc.data(), 'expense'); });
+    }).catch(function() { ct.innerHTML = '<p class="empty-msg">載入失敗</p>'; });
 }
 
-async function loadRecentIncomes() {
-    const container = document.getElementById('recent-incomes');
-    container.innerHTML = '<p class="empty-msg"><span class="loading-spinner"></span> 載入中...</p>';
-    try {
-        const snap = await db.collection('users').doc(currentUserId).collection('incomes').orderBy('date', 'desc').limit(10).get();
-        if (snap.empty) {
-            container.innerHTML = '<p class="empty-msg">尚無收入記錄</p>';
-            return;
-        }
-        container.innerHTML = '';
-        snap.forEach(doc => {
-            container.innerHTML += createRecordHTML(doc.id, doc.data(), 'income');
-        });
-    } catch (e) {
-        container.innerHTML = '<p class="empty-msg">載入失敗</p>';
-    }
+function loadRecentIncomes() {
+    var ct = document.getElementById('recent-incomes');
+    ct.innerHTML = '<p class="empty-msg"><span class="loading-spinner"></span> 載入中...</p>';
+    db.collection('users').doc(currentUserId).collection('incomes').orderBy('date', 'desc').limit(10).get().then(function(snap) {
+        if (snap.empty) { ct.innerHTML = '<p class="empty-msg">尚無收入記錄</p>'; return; }
+        ct.innerHTML = '';
+        snap.forEach(function(doc) { ct.innerHTML += createRecordHTML(doc.id, doc.data(), 'income'); });
+    }).catch(function() { ct.innerHTML = '<p class="empty-msg">載入失敗</p>'; });
 }
 
-async function loadAllRecords() {
-    const container = document.getElementById('all-records');
-    container.innerHTML = '<p class="empty-msg"><span class="loading-spinner"></span> 載入中...</p>';
-    const ft = document.getElementById('records-filter-type').value;
-    const sd = document.getElementById('records-filter-start').value;
-    const ed = document.getElementById('records-filter-end').value;
-
-    try {
-        let all = [];
-        if (ft === 'all' || ft === 'expense') {
-            let q = db.collection('users').doc(currentUserId).collection('expenses').orderBy('date', 'desc');
-            if (sd) q = q.where('date', '>=', sd);
-            if (ed) q = q.where('date', '<=', ed);
-            const snap = await q.get();
-            snap.forEach(doc => all.push({ id: doc.id, type: 'expense', ...doc.data() }));
-        }
-        if (ft === 'all' || ft === 'income') {
-            let q = db.collection('users').doc(currentUserId).collection('incomes').orderBy('date', 'desc');
-            if (sd) q = q.where('date', '>=', sd);
-            if (ed) q = q.where('date', '<=', ed);
-            const snap = await q.get();
-            snap.forEach(doc => all.push({ id: doc.id, type: 'income', ...doc.data() }));
-        }
-        all.sort((a, b) => b.date.localeCompare(a.date));
-        if (!all.length) {
-            container.innerHTML = '<p class="empty-msg">此期間無記錄</p>';
-            return;
-        }
-        container.innerHTML = '';
-        all.forEach(r => {
-            container.innerHTML += createRecordHTML(r.id, r, r.type);
-        });
-    } catch (e) {
-        console.error(e);
-        container.innerHTML = '<p class="empty-msg">載入失敗</p>';
+function loadAllRecords() {
+    var ct = document.getElementById('all-records');
+    ct.innerHTML = '<p class="empty-msg"><span class="loading-spinner"></span> 載入中...</p>';
+    var ft = document.getElementById('records-filter-type').value;
+    var sd = document.getElementById('records-filter-start').value;
+    var ed = document.getElementById('records-filter-end').value;
+    var all = [];
+    var p1 = Promise.resolve();
+    var p2 = Promise.resolve();
+    if (ft === 'all' || ft === 'expense') {
+        var q = db.collection('users').doc(currentUserId).collection('expenses').orderBy('date', 'desc');
+        if (sd) q = q.where('date', '>=', sd); if (ed) q = q.where('date', '<=', ed);
+        p1 = q.get().then(function(snap) { snap.forEach(function(doc) { all.push({id:doc.id,type:'expense',d:doc.data()}); }); });
     }
+    if (ft === 'all' || ft === 'income') {
+        var q2 = db.collection('users').doc(currentUserId).collection('incomes').orderBy('date', 'desc');
+        if (sd) q2 = q2.where('date', '>=', sd); if (ed) q2 = q2.where('date', '<=', ed);
+        p2 = q2.get().then(function(snap) { snap.forEach(function(doc) { all.push({id:doc.id,type:'income',d:doc.data()}); }); });
+    }
+    Promise.all([p1, p2]).then(function() {
+        all.sort(function(a, b) { return b.d.date.localeCompare(a.d.date); });
+        if (!all.length) { ct.innerHTML = '<p class="empty-msg">此期間無記錄</p>'; return; }
+        ct.innerHTML = '';
+        all.forEach(function(r) { ct.innerHTML += createRecordHTML(r.id, r.d, r.type); });
+    }).catch(function() { ct.innerHTML = '<p class="empty-msg">載入失敗</p>'; });
 }
 
 function createRecordHTML(id, data, type) {
-    const icon = type === 'expense' ? 'fa-arrow-down' : 'fa-arrow-up';
-    const sign = type === 'expense' ? '-' : '+';
-    const me = data.method === '現金' ? '💵' : data.method === '銀行' ? '🏦' : '💳';
-    return `<div class="record-item"><div class="record-icon ${type}"><i class="fas ${icon}"></i></div><div class="record-info"><div class="record-title">${data.category}${data.project ? ' · ' + data.project : ''}</div><div class="record-meta">${data.date} · ${me} ${data.method}${data.note ? ' · ' + data.note : ''}</div></div><div class="record-amount ${type}">${sign}
-$$
-{data.amount.toFixed(2)}</div><div class="record-actions"><button class="btn btn-xs btn-outline" onclick="editRecord('${id}','${type}')" title="編輯"><i class="fas fa-edit"></i></button><button class="btn btn-xs btn-outline" onclick="deleteRecord('${id}','${type}')" title="刪除"><i class="fas fa-trash"></i></button></div></div>`;
-}
-
-async function deleteRecord(id, type) {
-    if (!confirm('確定要刪除？')) return;
-    const col = type === 'expense' ? 'expenses' : 'incomes';
-    try {
-        await db.collection('users').doc(currentUserId).collection(col).doc(id).delete();
-        showToast('已刪除', 'info');
-        if (type === 'expense') loadRecentExpenses();
-        else loadRecentIncomes();
-        if (document.getElementById('tab-records').classList.contains('active')) loadAllRecords();
-    } catch (e) {
-        showToast('刪除失敗', 'error');
+    var icon = type === 'expense' ? 'fa-arrow-down' : 'fa-arrow-up';
+    var sign = type === 'expense' ? '-' : '+';
+    var me = data.method === '現金' ? '💵' : data.method === '銀行' ? '🏦' : '💳';
+    var amt = (typeof data.amount === 'number') ? data.amount.toFixed(2) : '0.00';
+    var origInfo = '';
+    if (data.currency && data.currency !== baseCurrency && data.originalAmount) {
+        origInfo = ' (' + data.currency + ' ' + data.originalAmount.toFixed(2) + ')';
     }
-}
-
-async function editRecord(id, type) {
-    const col = type === 'expense' ? 'expenses' : 'incomes';
-    try {
-        const doc = await db.collection('users').doc(currentUserId).collection(col).doc(id).get();
-        if (!doc.exists) {
-            showToast('記錄不存在', 'error');
-            return;
-        }
-        const data = doc.data();
-        const isExp = type === 'expense';
-        const cats = isExp ? expenseCategories : incomeCategories;
-        const methods = isExp ? ['現金', '銀行', '信用卡'] : ['現金', '銀行'];
-
-        document.getElementById('edit-modal-title').textContent = isExp ? '編輯支出' : '編輯收入';
-        let html = `
-            <div class="form-group"><label>金額</label><input type="number" id="edit-amount" value="${data.amount}" step="0.01" min="0"></div>
-            <div class="form-group"><label>日期</label><input type="date" id="edit-date" value="${data.date}"></div>
-            <div class="form-group"><label>形式</label><select id="edit-method">`;
-        methods.forEach(m => {
-            html += `<option value="${m}" ${data.method === m ? 'selected' : ''}>${m}</option>`;
-        });
-        html += `</select></div><div class="form-group"><label>種類</label><select id="edit-category">`;
-        cats.forEach(c => {
-            html += `<option value="${c}" ${data.category === c ? 'selected' : ''}>${c}</option>`;
-        });
-        html += `</select></div><div class="form-group"><label>Project</label><select id="edit-project"><option value="">-- 無 --</option>`;
-        projects.forEach(p => {
-            html += `<option value="${p}" ${data.project === p ? 'selected' : ''}>${p}</option>`;
-        });
-        html += `</select></div><div class="form-group"><label>備註</label><input type="text" id="edit-note" value="${data.note || ''}"></div>`;
-        document.getElementById('edit-modal-body').innerHTML = html;
-        document.getElementById('edit-modal').style.display = 'flex';
-
-        document.getElementById('edit-modal-save').onclick = async () => {
-            const ud = {
-                amount: parseFloat(document.getElementById('edit-amount').value),
-                date: document.getElementById('edit-date').value,
-                method: document.getElementById('edit-method').value,
-                category: document.getElementById('edit-category').value,
-                project: document.getElementById('edit-project').value,
-                note: document.getElementById('edit-note').value.trim()
-            };
-            if (!ud.amount || ud.amount <= 0) {
-                showToast('請輸入有效金額', 'error');
-                return;
-            }
-            try {
-                await db.collection('users').doc(currentUserId).collection(col).doc(id).update(ud);
-                closeEditModal();
-                showToast('已更新', 'success');
-                if (isExp) loadRecentExpenses();
-                else loadRecentIncomes();
-                if (document.getElementById('tab-records').classList.contains('active')) loadAllRecords();
-            } catch (e) {
-                showToast('更新失敗', 'error');
-            }
-        };
-    } catch (e) {
-        console.error(e);
-        showToast('載入失敗', 'error');
-    }
-}
-
-function closeEditModal() {
-    document.getElementById('edit-modal').style.display = 'none';
-}
-
-// ================= 報表 =================
-async function generateReports() {
-    const sd = document.getElementById('report-start').value;
-    const ed = document.getElementById('report-end').value;
-    if (!sd || !ed) {
-        showToast('請選擇日期', 'error');
-        return;
-    }
-    if (sd > ed) {
-        showToast('開始日期不能晚於結束日期', 'error');
-        return;
-    }
-    try {
-        const es = await db.collection('users').doc(currentUserId).collection('expenses').where('date', '>=', sd).where('date', '<=', ed).orderBy('date', 'asc').get();
-        const expenses = [];
-        es.forEach(doc => expenses.push(doc.data()));
-        
-        const is = await db.collection('users').doc(currentUserId).collection('incomes').where('date', '>=', sd).where('date', '<=', ed).orderBy('date', 'asc').get();
-        const incomes = [];
-        is.forEach(doc => incomes.push(doc.data()));
-        
-        const ti = incomes.reduce((s, r) => s + r.amount, 0);
-        const te = expenses.reduce((s, r) => s + r.amount, 0);
-        const net = ti - te;
-        
-        document.getElementById('report-total-income').textContent = `
-$$
-{ti.toFixed(2)}`;
-        document.getElementById('report-total-expense').textContent = `
-$$
-{te.toFixed(2)}`;
-        const ne = document.getElementById('report-net');
-        ne.textContent = `${net >= 0 ? '+' : ''}
-$$
-{net.toFixed(2)}`;
-        ne.style.color = net >= 0 ? 'var(--success)' : 'var(--danger)';
-        
-        document.getElementById('report-summary').style.display = 'grid';
-        
-        // 生成報表
-        if (incomes.length > 0) {
-            document.getElementById('report-income-section').style.display = 'block';
-            let h = `<p style="margin-bottom:10px;color:var(--gray-500);font-size:13px">📅 共 ${incomes.length} 筆</p>`;
-            h += '<h4 style="margin:20px 0 10px;font-size:14px">📊 按種類</h4><table class="report-table"><thead><tr><th>種類</th><th style="text-align:right">金額</th></tr></thead><tbody>';
-            const byCat = {};
-            incomes.forEach(r => byCat[r.category] = (byCat[r.category] || 0) + r.amount);
-            Object.entries(byCat).sort((a, b) => b[1] - a[1]).forEach(([cat, amt]) => {
-                h += `<tr><td>${cat}</td><td style="text-align:right;color:var(--success)">+
-$$
-{amt.toFixed(2)}</td></tr>`;
-            });
-            h += `<tr class="total-row"><td><strong>合計</strong></td><td style="text-align:right"><strong>+
-$$
-{ti.toFixed(2)}</strong></td></tr></tbody></table>`;
-            document.getElementById('report-income-detail').innerHTML = h;
-        } else {
-            document.getElementById('report-income-section').style.display = 'none';
-        }
-        
-        if (expenses.length > 0) {
-            document.getElementById('report-expense-section').style.display = 'block';
-            let h = `<p style="margin-bottom:10px;color:var(--gray-500);font-size:13px">📅 共 ${expenses.length} 筆</p>`;
-            h += '<h4 style="margin:20px 0 10px;font-size:14px">📊 按種類</h4><table class="report-table"><thead><tr><th>種類</th><th style="text-align:right">金額</th></tr></thead><tbody>';
-            const byCat = {};
-            expenses.forEach(r => byCat[r.category] = (byCat[r.category] || 0) + r.amount);
-            Object.entries(byCat).sort((a, b) => b[1] - a[1]).forEach(([cat, amt]) => {
-                h += `<tr><td>${cat}</td><td style="text-align:right;color:var(--danger)">-
-$$
-{amt.toFixed(2)}</td></tr>`;
-            });
-            h += `<tr class="total-row"><td><strong>合計</strong></td><td style="text-align:right"><strong>-
-$$
-{te.toFixed(2)}</strong></td></tr></tbody></table>`;
-            document.getElementById('report-expense-detail').innerHTML = h;
-        } else {
-            document.getElementById('report-expense-section').style.display = 'none';
-        }
-        
-        showToast('報表已生成', 'success');
-    } catch (e) {
-        console.error(e);
-        showToast('生成報表失敗', 'error');
-    }
-}
-
-// Keyboard shortcut
-document.addEventListener('keydown', e => {
-    if (e.key === 'Escape') closeEditModal();
-});
-</script>
-</body>
-</html>
+    return '<div class="record-item">' +
+        '<div class="record-icon ' + type + '"><i class="fas ' + icon + '"></i></div>' +
+        '<div class="record-info"><div class="record-title">' + data.category + (data.project ? ' · ' + data.project : '') + '</div>' +
+        '<div class="record-meta">' + data.date + ' · ' + me + ' ' + data.method + (data.note ? ' · ' + data.note : '') + '</div></div>' +
+        '<div class="record-amount ' + type
