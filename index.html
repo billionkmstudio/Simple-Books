@@ -6,394 +6,13 @@
     <title>💰 簡單財務記賬系統</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
 <style>
-/* ============ Reset & Base ============ */
-* { margin: 0; padding: 0; box-sizing: border-box; }
-
-:root {
-    --primary: #4f46e5;
-    --primary-light: #818cf8;
-    --primary-dark: #3730a3;
-    --success: #10b981;
-    --success-light: #34d399;
-    --danger: #ef4444;
-    --danger-light: #f87171;
-    --warning: #f59e0b;
-    --gray-50: #f9fafb;
-    --gray-100: #f3f4f6;
-    --gray-200: #e5e7eb;
-    --gray-300: #d1d5db;
-    --gray-400: #9ca3af;
-    --gray-500: #6b7280;
-    --gray-600: #4b5563;
-    --gray-700: #374151;
-    --gray-800: #1f2937;
-    --gray-900: #111827;
-    --shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.06);
-    --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
-    --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
-    --radius: 12px;
-    --radius-sm: 8px;
-}
-
-body {
-    font-family: 'Noto Sans TC', -apple-system, BlinkMacSystemFont, sans-serif;
-    background: var(--gray-100);
-    color: var(--gray-800);
-    min-height: 100vh;
-}
-
-/* ============ Auth Page ============ */
-.auth-container {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    padding: 20px;
-}
-
-.auth-card {
-    background: white;
-    border-radius: 20px;
-    padding: 40px;
-    width: 100%;
-    max-width: 440px;
-    box-shadow: var(--shadow-lg);
-}
-
-.auth-header {
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-.auth-icon {
-    font-size: 48px;
-    color: var(--primary);
-    margin-bottom: 10px;
-}
-
-.auth-header h1 {
-    font-size: 28px;
-    color: var(--gray-800);
-    margin-bottom: 5px;
-}
-
-.auth-header p {
-    color: var(--gray-500);
-    font-size: 14px;
-}
-
-.auth-form h2 {
-    font-size: 20px;
-    margin-bottom: 20px;
-    color: var(--gray-700);
-}
-
-.form-group {
-    margin-bottom: 16px;
-    flex: 1;
-}
-
-.form-group label {
-    display: block;
-    font-size: 13px;
-    font-weight: 500;
-    color: var(--gray-600);
-    margin-bottom: 6px;
-}
-
-.form-group input,
-.form-group select {
-    width: 100%;
-    padding: 10px 14px;
-    border: 2px solid var(--gray-200);
-    border-radius: var(--radius-sm);
-    font-size: 14px;
-    font-family: inherit;
-    transition: border-color 0.2s, box-shadow 0.2s;
-    background: white;
-}
-
-.form-group input:focus,
-.form-group select:focus {
-    outline: none;
-    border-color: var(--primary);
-    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
-}
-
-.form-row {
-    display: flex;
-    gap: 16px;
-}
-
-.flex-end {
-    display: flex;
-    align-items: flex-end;
-}
-
-/* ============ Buttons ============ */
-.btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    padding: 10px 20px;
-    border: none;
-    border-radius: var(--radius-sm);
-    font-size: 14px;
-    font-weight: 500;
-    font-family: inherit;
-    cursor: pointer;
-    transition: all 0.2s;
-}
-
-.btn:hover { transform: translateY(-1px); box-shadow: var(--shadow-md); }
-.btn:active { transform: translateY(0); }
-.btn-primary { background: var(--primary); color: white; }
-.btn-primary:hover { background: var(--primary-dark); }
-.btn-success { background: var(--success); color: white; }
-.btn-success:hover { background: #059669; }
-.btn-danger { background: var(--danger); color: white; }
-.btn-danger:hover { background: #dc2626; }
-.btn-outline { background: transparent; color: var(--gray-600); border: 2px solid var(--gray-300); }
-.btn-outline:hover { border-color: var(--gray-400); background: var(--gray-50); }
-.btn-google { background: white; color: var(--gray-700); border: 2px solid var(--gray-300); }
-.btn-google:hover { background: var(--gray-50); border-color: var(--gray-400); }
-.btn-full { width: 100%; }
-.btn-sm { padding: 6px 12px; font-size: 13px; }
-.btn-xs { padding: 4px 8px; font-size: 12px; }
-
-/* ============ Divider ============ */
-.divider { text-align: center; margin: 20px 0; position: relative; }
-.divider::before { content: ''; position: absolute; top: 50%; left: 0; right: 0; height: 1px; background: var(--gray-200); }
-.divider span { background: white; padding: 0 12px; position: relative; color: var(--gray-400); font-size: 13px; }
-
-.auth-switch { text-align: center; margin-top: 20px; font-size: 14px; color: var(--gray-500); }
-.auth-switch a { color: var(--primary); text-decoration: none; font-weight: 500; }
-
-.error-message {
-    background: #fef2f2; color: var(--danger); padding: 10px 14px;
-    border-radius: var(--radius-sm); font-size: 13px; margin-top: 16px; border: 1px solid #fecaca;
-}
-
-/* ============ App Layout ============ */
-.app-container { min-height: 100vh; }
-
-.app-header {
-    background: white; padding: 12px 24px; display: flex;
-    align-items: center; justify-content: space-between;
-    box-shadow: var(--shadow); position: sticky; top: 0; z-index: 100;
-}
-
-.header-left { display: flex; align-items: center; gap: 10px; }
-.header-left i { font-size: 24px; color: var(--primary); }
-.header-left h1 { font-size: 20px; color: var(--gray-800); }
-.header-right { display: flex; align-items: center; gap: 12px; }
-.user-info { font-size: 13px; color: var(--gray-500); }
-
-/* ============ Tab Navigation ============ */
-.tab-nav {
-    background: white; display: flex; overflow-x: auto;
-    border-bottom: 2px solid var(--gray-200); padding: 0 16px;
-    -webkit-overflow-scrolling: touch;
-}
-
-.tab-btn {
-    flex-shrink: 0; display: flex; align-items: center; gap: 6px;
-    padding: 14px 20px; border: none; background: none; font-size: 14px;
-    font-weight: 500; font-family: inherit; color: var(--gray-500);
-    cursor: pointer; border-bottom: 3px solid transparent;
-    transition: all 0.2s; margin-bottom: -2px;
-}
-
-.tab-btn:hover { color: var(--primary); }
-.tab-btn.active { color: var(--primary); border-bottom-color: var(--primary); }
-
-/* ============ Main Content ============ */
-.main-content { max-width: 960px; margin: 0 auto; padding: 20px; }
-.tab-content { display: none; }
-.tab-content.active { display: block; }
-
-/* ============ Cards ============ */
-.card { background: white; border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }
-.card-header {
-    padding: 16px 20px; border-bottom: 1px solid var(--gray-100);
-    display: flex; align-items: center; justify-content: space-between;
-    flex-wrap: wrap; gap: 10px;
-}
-.card-header h2 { font-size: 16px; display: flex; align-items: center; gap: 8px; }
-.card-body { padding: 20px; }
-.mt-20 { margin-top: 20px; }
-
-.text-success { color: var(--success); }
-.text-danger { color: var(--danger); }
-
-/* ============ Records List ============ */
-.records-list { max-height: 500px; overflow-y: auto; }
-
-.record-item {
-    display: flex; align-items: center; padding: 12px 0;
-    border-bottom: 1px solid var(--gray-100); gap: 12px;
-}
-.record-item:last-child { border-bottom: none; }
-
-.record-icon {
-    width: 40px; height: 40px; border-radius: 10px;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 16px; flex-shrink: 0;
-}
-.record-icon.expense { background: #fef2f2; color: var(--danger); }
-.record-icon.income { background: #ecfdf5; color: var(--success); }
-
-.record-info { flex: 1; min-width: 0; }
-.record-info .record-title { font-weight: 500; font-size: 14px; color: var(--gray-800); }
-.record-info .record-meta { font-size: 12px; color: var(--gray-400); margin-top: 2px; }
-
-.record-amount { font-weight: 700; font-size: 15px; flex-shrink: 0; }
-.record-amount.expense { color: var(--danger); }
-.record-amount.income { color: var(--success); }
-
-.record-actions { display: flex; gap: 4px; flex-shrink: 0; }
-.record-actions .btn-xs { opacity: 0.6; }
-.record-actions .btn-xs:hover { opacity: 1; }
-
-.empty-msg { text-align: center; color: var(--gray-400); padding: 30px; font-size: 14px; }
-
-/* ============ Filter Row ============ */
-.filter-row { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
-.filter-row select, .filter-row input {
-    padding: 6px 10px; border: 2px solid var(--gray-200);
-    border-radius: var(--radius-sm); font-size: 13px; font-family: inherit;
-}
-.filter-row span { color: var(--gray-400); font-size: 13px; }
-
-/* ============ Summary Cards ============ */
-.summary-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-
-.summary-card {
-    background: white; border-radius: var(--radius); padding: 20px;
-    display: flex; align-items: center; gap: 16px; box-shadow: var(--shadow);
-}
-
-.summary-icon {
-    width: 50px; height: 50px; border-radius: 12px;
-    display: flex; align-items: center; justify-content: center; font-size: 20px;
-}
-.income-card .summary-icon { background: #ecfdf5; color: var(--success); }
-.expense-card .summary-icon { background: #fef2f2; color: var(--danger); }
-.net-card .summary-icon { background: #eef2ff; color: var(--primary); }
-
-.summary-label { display: block; font-size: 12px; color: var(--gray-500); margin-bottom: 4px; }
-.summary-value { display: block; font-size: 22px; font-weight: 700; color: var(--gray-800); }
-
-/* ============ Report Tables ============ */
-.report-table-container { overflow-x: auto; }
-.report-table { width: 100%; border-collapse: collapse; font-size: 13px; }
-.report-table th {
-    background: var(--gray-50); padding: 10px 14px; text-align: left;
-    font-weight: 600; color: var(--gray-600); border-bottom: 2px solid var(--gray-200);
-    white-space: nowrap;
-}
-.report-table td { padding: 10px 14px; border-bottom: 1px solid var(--gray-100); color: var(--gray-700); }
-.report-table tr:hover td { background: var(--gray-50); }
-.report-table .total-row td {
-    font-weight: 700; background: var(--gray-50); border-top: 2px solid var(--gray-300);
-}
-
-/* ============ Settings ============ */
-.settings-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-.add-item-row { display: flex; gap: 8px; margin-bottom: 16px; }
-.add-item-row input {
-    flex: 1; padding: 8px 12px; border: 2px solid var(--gray-200);
-    border-radius: var(--radius-sm); font-size: 13px; font-family: inherit;
-}
-.add-item-row input:focus { outline: none; border-color: var(--primary); }
-
-.tags-list { display: flex; flex-wrap: wrap; gap: 8px; }
-.tag-item {
-    display: inline-flex; align-items: center; gap: 6px;
-    padding: 6px 12px; background: var(--gray-100);
-    border-radius: 20px; font-size: 13px; color: var(--gray-700);
-}
-.tag-item .tag-delete { cursor: pointer; color: var(--gray-400); font-size: 12px; transition: color 0.2s; }
-.tag-item .tag-delete:hover { color: var(--danger); }
-
-/* ============ Toast ============ */
-.toast-container {
-    position: fixed; top: 20px; right: 20px; z-index: 9999;
-    display: flex; flex-direction: column; gap: 8px;
-}
-.toast {
-    padding: 12px 20px; border-radius: var(--radius-sm); font-size: 14px;
-    color: white; box-shadow: var(--shadow-lg);
-    animation: toastIn 0.3s ease, toastOut 0.3s ease 2.7s forwards;
-    max-width: 350px;
-}
-.toast.success { background: var(--success); }
-.toast.error { background: var(--danger); }
-.toast.info { background: var(--primary); }
-
-@keyframes toastIn { from { transform: translateX(100%); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
-@keyframes toastOut { from { transform: translateX(0); opacity: 1; } to { transform: translateX(100%); opacity: 0; } }
-
-/* ============ Modal ============ */
-.modal {
-    position: fixed; inset: 0; z-index: 1000;
-    display: flex; align-items: center; justify-content: center;
-}
-.modal-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.5); }
-.modal-content {
-    position: relative; background: white; border-radius: var(--radius);
-    width: 90%; max-width: 500px; max-height: 90vh; overflow-y: auto;
-    box-shadow: var(--shadow-lg);
-}
-.modal-header {
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 16px 20px; border-bottom: 1px solid var(--gray-200);
-}
-.modal-header h3 { font-size: 16px; }
-.btn-close { background: none; border: none; font-size: 24px; cursor: pointer; color: var(--gray-400); line-height: 1; }
-.btn-close:hover { color: var(--gray-600); }
-.modal-body { padding: 20px; }
-.modal-footer {
-    padding: 12px 20px; border-top: 1px solid var(--gray-200);
-    display: flex; justify-content: flex-end; gap: 8px;
-}
-
-/* ============ Loading ============ */
-.loading-spinner {
-    display: inline-block; width: 20px; height: 20px;
-    border: 2px solid var(--gray-200); border-top-color: var(--primary);
-    border-radius: 50%; animation: spin 0.6s linear infinite;
-}
-@keyframes spin { to { transform: rotate(360deg); } }
-
-/* ============ Responsive ============ */
-@media (max-width: 768px) {
-    .form-row { flex-direction: column; gap: 0; }
-    .summary-cards { grid-template-columns: 1fr; }
-    .app-header { padding: 10px 16px; }
-    .header-left h1 { font-size: 16px; }
-    .user-info { display: none; }
-    .main-content { padding: 12px; }
-    .tab-btn { padding: 12px 14px; font-size: 13px; }
-    .card-header { flex-direction: column; align-items: flex-start; }
-    .filter-row { width: 100%; }
-    .auth-card { padding: 24px; }
-    .settings-grid { grid-template-columns: 1fr; }
-}
-
-::-webkit-scrollbar { width: 6px; height: 6px; }
-::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb { background: var(--gray-300); border-radius: 3px; }
-::-webkit-scrollbar-thumb:hover { background: var(--gray-400); }
+*{margin:0;padding:0;box-sizing:border-box}:root{--primary:#4f46e5;--primary-dark:#3730a3;--success:#10b981;--danger:#ef4444;--gray-50:#f9fafb;--gray-100:#f3f4f6;--gray-200:#e5e7eb;--gray-300:#d1d5db;--gray-400:#9ca3af;--gray-500:#6b7280;--gray-600:#4b5563;--gray-700:#374151;--gray-800:#1f2937;--shadow:0 1px 3px rgba(0,0,0,.12);--shadow-lg:0 10px 15px -3px rgba(0,0,0,.1);--radius:12px;--radius-sm:8px}body{font-family:'Noto Sans TC',-apple-system,BlinkMacSystemFont,sans-serif;background:var(--gray-100);color:var(--gray-800);min-height:100vh}.auth-container{min-height:100vh;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);padding:20px}.auth-card{background:#fff;border-radius:20px;padding:40px;width:100%;max-width:440px;box-shadow:var(--shadow-lg)}.auth-header{text-align:center;margin-bottom:30px}.auth-icon{font-size:48px;color:var(--primary);margin-bottom:10px}.auth-header h1{font-size:28px;color:var(--gray-800);margin-bottom:5px}.auth-header p{color:var(--gray-500);font-size:14px}.auth-form h2{font-size:20px;margin-bottom:20px;color:var(--gray-700)}.form-group{margin-bottom:16px}.form-group label{display:block;font-size:13px;font-weight:500;color:var(--gray-600);margin-bottom:6px}.form-group input,.form-group select{width:100%;padding:10px 14px;border:2px solid var(--gray-200);border-radius:var(--radius-sm);font-size:14px;font-family:inherit;background:#fff}.form-group input:focus,.form-group select:focus{outline:none;border-color:var(--primary);box-shadow:0 0 0 3px rgba(79,70,229,.1)}.form-row{display:flex;gap:16px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:10px 20px;border:none;border-radius:var(--radius-sm);font-size:14px;font-weight:500;font-family:inherit;cursor:pointer;transition:all .2s}.btn-primary{background:var(--primary);color:#fff}.btn-primary:hover{background:var(--primary-dark)}.btn-success{background:var(--success);color:#fff}.btn-danger{background:var(--danger);color:#fff}.btn-outline{background:transparent;color:var(--gray-600);border:2px solid var(--gray-300)}.btn-google{background:#fff;color:var(--gray-700);border:2px solid var(--gray-300)}.btn-full{width:100%}.btn-sm{padding:6px 12px;font-size:13px}.btn-xs{padding:4px 8px;font-size:12px}.divider{text-align:center;margin:20px 0;position:relative}.divider::before{content:'';position:absolute;top:50%;left:0;right:0;height:1px;background:var(--gray-200)}.divider span{background:#fff;padding:0 12px;position:relative;color:var(--gray-400);font-size:13px}.auth-switch{text-align:center;margin-top:20px;font-size:14px;color:var(--gray-500)}.auth-switch a{color:var(--primary);text-decoration:none;font-weight:500;cursor:pointer}.error-message{background:#fef2f2;color:var(--danger);padding:10px 14px;border-radius:var(--radius-sm);font-size:13px;margin-top:16px;border:1px solid #fecaca}.app-container{min-height:100vh}.app-header{background:#fff;padding:12px 24px;display:flex;align-items:center;justify-content:space-between;box-shadow:var(--shadow);position:sticky;top:0;z-index:100}.header-left{display:flex;align-items:center;gap:10px}.header-left i{font-size:24px;color:var(--primary)}.header-left h1{font-size:20px;color:var(--gray-800)}.header-right{display:flex;align-items:center;gap:12px}.user-info{font-size:13px;color:var(--gray-500)}.tab-nav{background:#fff;display:flex;overflow-x:auto;border-bottom:2px solid var(--gray-200);padding:0 16px}.tab-btn{flex-shrink:0;display:flex;align-items:center;gap:6px;padding:14px 20px;border:none;background:none;font-size:14px;font-weight:500;font-family:inherit;color:var(--gray-500);cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-2px}.tab-btn.active{color:var(--primary);border-bottom-color:var(--primary)}.main-content{max-width:960px;margin:0 auto;padding:20px}.tab-content{display:none}.tab-content.active{display:block}.card{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}.card-header{padding:16px 20px;border-bottom:1px solid var(--gray-100);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px}.card-header h2{font-size:16px;display:flex;align-items:center;gap:8px}.card-body{padding:20px}.mt-20{margin-top:20px}.text-success{color:var(--success)}.text-danger{color:var(--danger)}.records-list{max-height:500px;overflow-y:auto}.record-item{display:flex;align-items:center;padding:12px 0;border-bottom:1px solid var(--gray-100);gap:12px}.record-item:last-child{border-bottom:none}.record-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}.record-icon.expense{background:#fef2f2;color:var(--danger)}.record-icon.income{background:#ecfdf5;color:var(--success)}.record-info{flex:1;min-width:0}.record-info .record-title{font-weight:500;font-size:14px;color:var(--gray-800)}.record-info .record-meta{font-size:12px;color:var(--gray-400);margin-top:2px}.record-amount{font-weight:700;font-size:15px;flex-shrink:0}.record-amount.expense{color:var(--danger)}.record-amount.income{color:var(--success)}.record-actions{display:flex;gap:4px;flex-shrink:0}.record-actions .btn-xs{opacity:.6}.empty-msg{text-align:center;color:var(--gray-400);padding:30px;font-size:14px}.filter-row{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.filter-row select,.filter-row input{padding:6px 10px;border:2px solid var(--gray-200);border-radius:var(--radius-sm);font-size:13px;font-family:inherit}.summary-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.summary-card{background:#fff;border-radius:var(--radius);padding:20px;display:flex;align-items:center;gap:16px;box-shadow:var(--shadow)}.summary-icon{width:50px;height:50px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px}.income-card .summary-icon{background:#ecfdf5;color:var(--success)}.expense-card .summary-icon{background:#fef2f2;color:var(--danger)}.net-card .summary-icon{background:#eef2ff;color:var(--primary)}.summary-label{display:block;font-size:12px;color:var(--gray-500);margin-bottom:4px}.summary-value{display:block;font-size:22px;font-weight:700;color:var(--gray-800)}.report-table-container{overflow-x:auto}.report-table{width:100%;border-collapse:collapse;font-size:13px}.report-table th{background:var(--gray-50);padding:10px 14px;text-align:left;font-weight:600;color:var(--gray-600);border-bottom:2px solid var(--gray-200);white-space:nowrap}.report-table td{padding:10px 14px;border-bottom:1px solid var(--gray-100);color:var(--gray-700)}.report-table .total-row td{font-weight:700;background:var(--gray-50);border-top:2px solid var(--gray-300)}.settings-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}.add-item-row{display:flex;gap:8px;margin-bottom:16px}.add-item-row input{flex:1;padding:8px 12px;border:2px solid var(--gray-200);border-radius:var(--radius-sm);font-size:13px;font-family:inherit}.tags-list{display:flex;flex-wrap:wrap;gap:8px}.tag-item{display:inline-flex;align-items:center;gap:6px;padding:6px 12px;background:var(--gray-100);border-radius:20px;font-size:13px;color:var(--gray-700)}.tag-item .tag-delete{cursor:pointer;color:var(--gray-400);font-size:12px}.toast-container{position:fixed;top:20px;right:20px;z-index:9999;display:flex;flex-direction:column;gap:8px}.toast{padding:12px 20px;border-radius:var(--radius-sm);font-size:14px;color:#fff;box-shadow:var(--shadow-lg);animation:toastIn .3s ease,toastOut .3s ease 2.7s forwards;max-width:350px}.toast.success{background:var(--success)}.toast.error{background:var(--danger)}.toast.info{background:var(--primary)}@keyframes toastIn{from{transform:translateX(100%);opacity:0}to{transform:translateX(0);opacity:1}}@keyframes toastOut{from{transform:translateX(0);opacity:1}to{transform:translateX(100%);opacity:0}}.modal{position:fixed;inset:0;z-index:1000;display:flex;align-items:center;justify-content:center}.modal-overlay{position:absolute;inset:0;background:rgba(0,0,0,.5)}.modal-content{position:relative;background:#fff;border-radius:var(--radius);width:90%;max-width:500px;max-height:90vh;overflow-y:auto;box-shadow:var(--shadow-lg)}.modal-header{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;border-bottom:1px solid var(--gray-200)}.modal-header h3{font-size:16px}.btn-close{background:none;border:none;font-size:24px;cursor:pointer;color:var(--gray-400);line-height:1}.modal-body{padding:20px}.modal-footer{padding:12px 20px;border-top:1px solid var(--gray-200);display:flex;justify-content:flex-end;gap:8px}.loading-spinner{display:inline-block;width:20px;height:20px;border:2px solid var(--gray-200);border-top-color:var(--primary);border-radius:50%;animation:spin .6s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}@media(max-width:768px){.form-row{flex-direction:column}.summary-cards{grid-template-columns:1fr}.settings-grid{grid-template-columns:1fr}}::-webkit-scrollbar{width:6px}::-webkit-scrollbar-thumb{background:var(--gray-300);border-radius:3px}
 </style>
 </head>
 <body>
 
-<!-- ============ 登入頁面 ============ -->
+<!-- 登入頁面 -->
 <div id="auth-container" class="auth-container">
     <div class="auth-card">
         <div class="auth-header">
@@ -401,347 +20,116 @@ body {
             <h1>簡單財務記賬</h1>
             <p>輕鬆管理你的收入與支出</p>
         </div>
-
         <div id="login-form" class="auth-form">
             <h2>登入</h2>
-            <div class="form-group">
-                <label><i class="fas fa-envelope"></i> 電子郵件</label>
-                <input type="email" id="login-email" placeholder="your@email.com">
-            </div>
-            <div class="form-group">
-                <label><i class="fas fa-lock"></i> 密碼</label>
-                <input type="password" id="login-password" placeholder="輸入密碼">
-            </div>
-            <button class="btn btn-primary btn-full" onclick="loginWithEmail()">
-                <i class="fas fa-sign-in-alt"></i> 登入
-            </button>
+            <div class="form-group"><label><i class="fas fa-envelope"></i> 電子郵件</label><input type="email" id="login-email" placeholder="your@email.com"></div>
+            <div class="form-group"><label><i class="fas fa-lock"></i> 密碼</label><input type="password" id="login-password" placeholder="輸入密碼"></div>
+            <button class="btn btn-primary btn-full" onclick="loginWithEmail()"><i class="fas fa-sign-in-alt"></i> 登入</button>
             <div class="divider"><span>或</span></div>
-            <button class="btn btn-google btn-full" onclick="loginWithGoogle()">
-                <i class="fab fa-google"></i> 使用 Google 登入
-            </button>
-            <p class="auth-switch">還沒有帳號？<a href="#" onclick="showRegister()">立即註冊</a></p>
+            <button class="btn btn-google btn-full" onclick="loginWithGoogle()"><i class="fab fa-google"></i> 使用 Google 登入</button>
+            <p class="auth-switch">還沒有帳號？<a onclick="showRegister()">立即註冊</a></p>
         </div>
-
         <div id="register-form" class="auth-form" style="display:none;">
             <h2>註冊</h2>
-            <div class="form-group">
-                <label><i class="fas fa-envelope"></i> 電子郵件</label>
-                <input type="email" id="register-email" placeholder="your@email.com">
-            </div>
-            <div class="form-group">
-                <label><i class="fas fa-lock"></i> 密碼（至少6位）</label>
-                <input type="password" id="register-password" placeholder="設定密碼">
-            </div>
-            <div class="form-group">
-                <label><i class="fas fa-lock"></i> 確認密碼</label>
-                <input type="password" id="register-password-confirm" placeholder="再次輸入密碼">
-            </div>
-            <button class="btn btn-primary btn-full" onclick="registerWithEmail()">
-                <i class="fas fa-user-plus"></i> 註冊
-            </button>
+            <div class="form-group"><label><i class="fas fa-envelope"></i> 電子郵件</label><input type="email" id="register-email" placeholder="your@email.com"></div>
+            <div class="form-group"><label><i class="fas fa-lock"></i> 密碼（至少6位）</label><input type="password" id="register-password" placeholder="設定密碼"></div>
+            <div class="form-group"><label><i class="fas fa-lock"></i> 確認密碼</label><input type="password" id="register-password-confirm" placeholder="再次輸入密碼"></div>
+            <button class="btn btn-primary btn-full" onclick="registerWithEmail()"><i class="fas fa-user-plus"></i> 註冊</button>
             <div class="divider"><span>或</span></div>
-            <button class="btn btn-google btn-full" onclick="loginWithGoogle()">
-                <i class="fab fa-google"></i> 使用 Google 註冊
-            </button>
-            <p class="auth-switch">已有帳號？<a href="#" onclick="showLogin()">返回登入</a></p>
+            <button class="btn btn-google btn-full" onclick="loginWithGoogle()"><i class="fab fa-google"></i> 使用 Google 註冊</button>
+            <p class="auth-switch">已有帳號？<a onclick="showLogin()">返回登入</a></p>
         </div>
-
         <div id="auth-error" class="error-message" style="display:none;"></div>
     </div>
 </div>
 
-<!-- ============ 主應用程式 ============ -->
+<!-- 主應用 -->
 <div id="app-container" class="app-container" style="display:none;">
-    
     <header class="app-header">
-        <div class="header-left">
-            <i class="fas fa-wallet"></i>
-            <h1>財務記賬</h1>
-        </div>
-        <div class="header-right">
-            <span id="user-display" class="user-info"></span>
-            <button class="btn btn-sm btn-outline" onclick="logout()">
-                <i class="fas fa-sign-out-alt"></i> 登出
-            </button>
-        </div>
+        <div class="header-left"><i class="fas fa-wallet"></i><h1>財務記賬</h1></div>
+        <div class="header-right"><span id="user-display" class="user-info"></span><button class="btn btn-sm btn-outline" onclick="logout()"><i class="fas fa-sign-out-alt"></i> 登出</button></div>
     </header>
-
     <nav class="tab-nav">
-        <button class="tab-btn active" data-tab="expense" onclick="switchTab('expense')">
-            <i class="fas fa-arrow-down text-danger"></i> 記錄支出
-        </button>
-        <button class="tab-btn" data-tab="income" onclick="switchTab('income')">
-            <i class="fas fa-arrow-up text-success"></i> 記錄收入
-        </button>
-        <button class="tab-btn" data-tab="records" onclick="switchTab('records')">
-            <i class="fas fa-list"></i> 所有記錄
-        </button>
-        <button class="tab-btn" data-tab="reports" onclick="switchTab('reports')">
-            <i class="fas fa-chart-bar"></i> 報表
-        </button>
-        <button class="tab-btn" data-tab="settings" onclick="switchTab('settings')">
-            <i class="fas fa-cog"></i> 設定
-        </button>
+        <button class="tab-btn active" data-tab="expense" onclick="switchTab('expense')"><i class="fas fa-arrow-down text-danger"></i> 支出</button>
+        <button class="tab-btn" data-tab="income" onclick="switchTab('income')"><i class="fas fa-arrow-up text-success"></i> 收入</button>
+        <button class="tab-btn" data-tab="records" onclick="switchTab('records')"><i class="fas fa-list"></i> 記錄</button>
+        <button class="tab-btn" data-tab="reports" onclick="switchTab('reports')"><i class="fas fa-chart-bar"></i> 報表</button>
+        <button class="tab-btn" data-tab="settings" onclick="switchTab('settings')"><i class="fas fa-cog"></i> 設定</button>
     </nav>
-
     <main class="main-content">
-
-        <!-- ====== 支出頁面 ====== -->
         <div id="tab-expense" class="tab-content active">
             <div class="card">
                 <div class="card-header"><h2><i class="fas fa-minus-circle text-danger"></i> 新增支出</h2></div>
                 <div class="card-body">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label>金額 *</label>
-                            <input type="number" id="expense-amount" placeholder="0.00" step="0.01" min="0">
-                        </div>
-                        <div class="form-group">
-                            <label>日期 *</label>
-                            <input type="date" id="expense-date">
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label>支出形式 *</label>
-                            <select id="expense-method">
-                                <option value="現金">💵 現金</option>
-                                <option value="銀行">🏦 銀行</option>
-                                <option value="信用卡">💳 信用卡</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label>費用種類 *</label>
-                            <select id="expense-category"><option value="">-- 選擇種類 --</option></select>
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label>Project</label>
-                            <select id="expense-project"><option value="">-- 選擇 Project --</option></select>
-                        </div>
-                        <div class="form-group">
-                            <label>備註</label>
-                            <input type="text" id="expense-note" placeholder="選填備註">
-                        </div>
-                    </div>
-                    <button class="btn btn-danger btn-full" onclick="addExpense()">
-                        <i class="fas fa-plus"></i> 新增支出
-                    </button>
+                    <div class="form-row"><div class="form-group"><label>金額 *</label><input type="number" id="expense-amount" placeholder="0.00" step="0.01" min="0"></div><div class="form-group"><label>日期 *</label><input type="date" id="expense-date"></div></div>
+                    <div class="form-row"><div class="form-group"><label>形式 *</label><select id="expense-method"><option value="現金">💵 現金</option><option value="銀行">🏦 銀行</option><option value="信用卡">💳 信用卡</option></select></div><div class="form-group"><label>種類 *</label><select id="expense-category"><option value="">-- 選擇 --</option></select></div></div>
+                    <div class="form-row"><div class="form-group"><label>Project</label><select id="expense-project"><option value="">-- 無 --</option></select></div><div class="form-group"><label>備註</label><input type="text" id="expense-note" placeholder="選填"></div></div>
+                    <button class="btn btn-danger btn-full" onclick="addExpense()"><i class="fas fa-plus"></i> 新增支出</button>
                 </div>
             </div>
-            <div class="card mt-20">
-                <div class="card-header"><h2><i class="fas fa-history"></i> 最近支出</h2></div>
-                <div class="card-body">
-                    <div id="recent-expenses" class="records-list"><p class="empty-msg">載入中...</p></div>
-                </div>
-            </div>
+            <div class="card mt-20"><div class="card-header"><h2><i class="fas fa-history"></i> 最近支出</h2></div><div class="card-body"><div id="recent-expenses" class="records-list"><p class="empty-msg">載入中...</p></div></div></div>
         </div>
-
-        <!-- ====== 收入頁面 ====== -->
         <div id="tab-income" class="tab-content">
             <div class="card">
                 <div class="card-header"><h2><i class="fas fa-plus-circle text-success"></i> 新增收入</h2></div>
                 <div class="card-body">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label>金額 *</label>
-                            <input type="number" id="income-amount" placeholder="0.00" step="0.01" min="0">
-                        </div>
-                        <div class="form-group">
-                            <label>日期 *</label>
-                            <input type="date" id="income-date">
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label>收入形式 *</label>
-                            <select id="income-method">
-                                <option value="現金">💵 現金</option>
-                                <option value="銀行">🏦 銀行</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label>收入種類 *</label>
-                            <select id="income-category"><option value="">-- 選擇種類 --</option></select>
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label>Project</label>
-                            <select id="income-project"><option value="">-- 選擇 Project --</option></select>
-                        </div>
-                        <div class="form-group">
-                            <label>備註</label>
-                            <input type="text" id="income-note" placeholder="選填備註">
-                        </div>
-                    </div>
-                    <button class="btn btn-success btn-full" onclick="addIncome()">
-                        <i class="fas fa-plus"></i> 新增收入
-                    </button>
+                    <div class="form-row"><div class="form-group"><label>金額 *</label><input type="number" id="income-amount" placeholder="0.00" step="0.01" min="0"></div><div class="form-group"><label>日期 *</label><input type="date" id="income-date"></div></div>
+                    <div class="form-row"><div class="form-group"><label>形式 *</label><select id="income-method"><option value="現金">💵 現金</option><option value="銀行">🏦 銀行</option></select></div><div class="form-group"><label>種類 *</label><select id="income-category"><option value="">-- 選擇 --</option></select></div></div>
+                    <div class="form-row"><div class="form-group"><label>Project</label><select id="income-project"><option value="">-- 無 --</option></select></div><div class="form-group"><label>備註</label><input type="text" id="income-note" placeholder="選填"></div></div>
+                    <button class="btn btn-success btn-full" onclick="addIncome()"><i class="fas fa-plus"></i> 新增收入</button>
                 </div>
             </div>
-            <div class="card mt-20">
-                <div class="card-header"><h2><i class="fas fa-history"></i> 最近收入</h2></div>
-                <div class="card-body">
-                    <div id="recent-incomes" class="records-list"><p class="empty-msg">載入中...</p></div>
-                </div>
-            </div>
+            <div class="card mt-20"><div class="card-header"><h2><i class="fas fa-history"></i> 最近收入</h2></div><div class="card-body"><div id="recent-incomes" class="records-list"><p class="empty-msg">載入中...</p></div></div></div>
         </div>
-
-        <!-- ====== 所有記錄頁面 ====== -->
         <div id="tab-records" class="tab-content">
             <div class="card">
                 <div class="card-header">
                     <h2><i class="fas fa-list-alt"></i> 所有記錄</h2>
-                    <div class="filter-row">
-                        <select id="records-filter-type" onchange="loadAllRecords()">
-                            <option value="all">全部</option>
-                            <option value="expense">僅支出</option>
-                            <option value="income">僅收入</option>
-                        </select>
-                        <input type="date" id="records-filter-start" onchange="loadAllRecords()">
-                        <span>～</span>
-                        <input type="date" id="records-filter-end" onchange="loadAllRecords()">
-                    </div>
+                    <div class="filter-row"><select id="records-filter-type" onchange="loadAllRecords()"><option value="all">全部</option><option value="expense">支出</option><option value="income">收入</option></select><input type="date" id="records-filter-start" onchange="loadAllRecords()"><span>～</span><input type="date" id="records-filter-end" onchange="loadAllRecords()"></div>
                 </div>
-                <div class="card-body">
-                    <div id="all-records" class="records-list"><p class="empty-msg">載入中...</p></div>
-                </div>
+                <div class="card-body"><div id="all-records" class="records-list"><p class="empty-msg">載入中...</p></div></div>
             </div>
         </div>
-
-        <!-- ====== 報表頁面 ====== -->
         <div id="tab-reports" class="tab-content">
             <div class="card">
                 <div class="card-header"><h2><i class="fas fa-chart-pie"></i> 財務報表</h2></div>
-                <div class="card-body">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label>開始日期</label>
-                            <input type="date" id="report-start">
-                        </div>
-                        <div class="form-group">
-                            <label>結束日期</label>
-                            <input type="date" id="report-end">
-                        </div>
-                        <div class="form-group flex-end">
-                            <button class="btn btn-primary" onclick="generateReports()">
-                                <i class="fas fa-search"></i> 生成報表
-                            </button>
-                        </div>
-                    </div>
-                </div>
+                <div class="card-body"><div class="form-row"><div class="form-group"><label>開始日期</label><input type="date" id="report-start"></div><div class="form-group"><label>結束日期</label><input type="date" id="report-end"></div><div class="form-group" style="display:flex;align-items:flex-end"><button class="btn btn-primary" onclick="generateReports()"><i class="fas fa-search"></i> 生成</button></div></div></div>
             </div>
-
             <div class="summary-cards mt-20" id="report-summary" style="display:none;">
-                <div class="summary-card income-card">
-                    <div class="summary-icon"><i class="fas fa-arrow-up"></i></div>
-                    <div class="summary-info">
-                        <span class="summary-label">總收入</span>
-                        <span class="summary-value" id="report-total-income">\$0</span>
-                    </div>
-                </div>
-                <div class="summary-card expense-card">
-                    <div class="summary-icon"><i class="fas fa-arrow-down"></i></div>
-                    <div class="summary-info">
-                        <span class="summary-label">總支出</span>
-                        <span class="summary-value" id="report-total-expense">\$0</span>
-                    </div>
-                </div>
-                <div class="summary-card net-card">
-                    <div class="summary-icon"><i class="fas fa-balance-scale"></i></div>
-                    <div class="summary-info">
-                        <span class="summary-label">淨收支</span>
-                        <span class="summary-value" id="report-net">\$0</span>
-                    </div>
-                </div>
+                <div class="summary-card income-card"><div class="summary-icon"><i class="fas fa-arrow-up"></i></div><div class="summary-info"><span class="summary-label">總收入</span><span class="summary-value" id="report-total-income">\$0</span></div></div>
+                <div class="summary-card expense-card"><div class="summary-icon"><i class="fas fa-arrow-down"></i></div><div class="summary-info"><span class="summary-label">總支出</span><span class="summary-value" id="report-total-expense">\$0</span></div></div>
+                <div class="summary-card net-card"><div class="summary-icon"><i class="fas fa-balance-scale"></i></div><div class="summary-info"><span class="summary-label">淨額</span><span class="summary-value" id="report-net">\$0</span></div></div>
             </div>
-
-            <div class="card mt-20" id="report-income-section" style="display:none;">
-                <div class="card-header"><h2><i class="fas fa-arrow-up text-success"></i> 淨收入報表</h2></div>
-                <div class="card-body"><div id="report-income-detail" class="report-table-container"></div></div>
-            </div>
-
-            <div class="card mt-20" id="report-expense-section" style="display:none;">
-                <div class="card-header"><h2><i class="fas fa-arrow-down text-danger"></i> 淨支出報表</h2></div>
-                <div class="card-body"><div id="report-expense-detail" class="report-table-container"></div></div>
-            </div>
-
-            <div class="card mt-20" id="report-all-section" style="display:none;">
-                <div class="card-header"><h2><i class="fas fa-exchange-alt"></i> 收入與支出總表</h2></div>
-                <div class="card-body"><div id="report-all-detail" class="report-table-container"></div></div>
-            </div>
+            <div class="card mt-20" id="report-income-section" style="display:none;"><div class="card-header"><h2><i class="fas fa-arrow-up text-success"></i> 收入報表</h2></div><div class="card-body"><div id="report-income-detail" class="report-table-container"></div></div></div>
+            <div class="card mt-20" id="report-expense-section" style="display:none;"><div class="card-header"><h2><i class="fas fa-arrow-down text-danger"></i> 支出報表</h2></div><div class="card-body"><div id="report-expense-detail" class="report-table-container"></div></div></div>
+            <div class="card mt-20" id="report-all-section" style="display:none;"><div class="card-header"><h2><i class="fas fa-exchange-alt"></i> 總表</h2></div><div class="card-body"><div id="report-all-detail" class="report-table-container"></div></div></div>
         </div>
-
-        <!-- ====== 設定頁面 ====== -->
         <div id="tab-settings" class="tab-content">
             <div class="settings-grid">
-                <div class="card">
-                    <div class="card-header"><h2><i class="fas fa-tags text-danger"></i> 支出種類</h2></div>
-                    <div class="card-body">
-                        <div class="add-item-row">
-                            <input type="text" id="new-expense-category" placeholder="新增支出種類" onkeypress="if(event.key==='Enter')addCategory('expense')">
-                            <button class="btn btn-sm btn-primary" onclick="addCategory('expense')"><i class="fas fa-plus"></i></button>
-                        </div>
-                        <div id="expense-categories-list" class="tags-list"></div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-header"><h2><i class="fas fa-tags text-success"></i> 收入種類</h2></div>
-                    <div class="card-body">
-                        <div class="add-item-row">
-                            <input type="text" id="new-income-category" placeholder="新增收入種類" onkeypress="if(event.key==='Enter')addCategory('income')">
-                            <button class="btn btn-sm btn-primary" onclick="addCategory('income')"><i class="fas fa-plus"></i></button>
-                        </div>
-                        <div id="income-categories-list" class="tags-list"></div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-header"><h2><i class="fas fa-project-diagram"></i> Projects</h2></div>
-                    <div class="card-body">
-                        <div class="add-item-row">
-                            <input type="text" id="new-project" placeholder="新增 Project" onkeypress="if(event.key==='Enter')addProject()">
-                            <button class="btn btn-sm btn-primary" onclick="addProject()"><i class="fas fa-plus"></i></button>
-                        </div>
-                        <div id="projects-list" class="tags-list"></div>
-                    </div>
-                </div>
+                <div class="card"><div class="card-header"><h2><i class="fas fa-tags text-danger"></i> 支出種類</h2></div><div class="card-body"><div class="add-item-row"><input type="text" id="new-expense-category" placeholder="新增" onkeypress="if(event.key==='Enter')addCategory('expense')"><button class="btn btn-sm btn-primary" onclick="addCategory('expense')"><i class="fas fa-plus"></i></button></div><div id="expense-categories-list" class="tags-list"></div></div></div>
+                <div class="card"><div class="card-header"><h2><i class="fas fa-tags text-success"></i> 收入種類</h2></div><div class="card-body"><div class="add-item-row"><input type="text" id="new-income-category" placeholder="新增" onkeypress="if(event.key==='Enter')addCategory('income')"><button class="btn btn-sm btn-primary" onclick="addCategory('income')"><i class="fas fa-plus"></i></button></div><div id="income-categories-list" class="tags-list"></div></div></div>
+                <div class="card"><div class="card-header"><h2><i class="fas fa-project-diagram"></i> Projects</h2></div><div class="card-body"><div class="add-item-row"><input type="text" id="new-project" placeholder="新增" onkeypress="if(event.key==='Enter')addProject()"><button class="btn btn-sm btn-primary" onclick="addProject()"><i class="fas fa-plus"></i></button></div><div id="projects-list" class="tags-list"></div></div></div>
             </div>
         </div>
-
     </main>
 </div>
 
-<!-- Toast -->
 <div id="toast-container" class="toast-container"></div>
-
-<!-- Modal -->
 <div id="edit-modal" class="modal" style="display:none;">
     <div class="modal-overlay" onclick="closeEditModal()"></div>
     <div class="modal-content">
-        <div class="modal-header">
-            <h3 id="edit-modal-title">編輯記錄</h3>
-            <button class="btn-close" onclick="closeEditModal()">&times;</button>
-        </div>
+        <div class="modal-header"><h3 id="edit-modal-title">編輯</h3><button class="btn-close" onclick="closeEditModal()">&times;</button></div>
         <div class="modal-body" id="edit-modal-body"></div>
-        <div class="modal-footer">
-            <button class="btn btn-outline" onclick="closeEditModal()">取消</button>
-            <button class="btn btn-primary" id="edit-modal-save">儲存</button>
-        </div>
+        <div class="modal-footer"><button class="btn btn-outline" onclick="closeEditModal()">取消</button><button class="btn btn-primary" id="edit-modal-save">儲存</button></div>
     </div>
 </div>
 
-<!-- Firebase SDK -->
 <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
 
 <script>
-// ============================================================
-// ⚠️⚠️⚠️ 第一步：請將下方設定替換成你自己的 Firebase 設定 ⚠️⚠️⚠️
-// 取得方式：Firebase Console > 專案設定 > 你的應用程式 > Web
-// ============================================================
+// ⚠️ 請填入你的 Firebase 設定
 const firebaseConfig = {
     apiKey: "AIzaSyAcZrnL8Aze4ZIlh6RgornQ0oBd6xa092M",
     authDomain: "simple-books-700d7.firebaseapp.com",
@@ -757,9 +145,7 @@ const auth = firebase.auth();
 const db = firebase.firestore();
 const googleProvider = new firebase.auth.GoogleAuthProvider();
 
-// ============================================================
-// 認證模組
-// ============================================================
+// ================= 認證函數 =================
 function showLogin() {
     document.getElementById('login-form').style.display = 'block';
     document.getElementById('register-form').style.display = 'none';
@@ -773,38 +159,82 @@ function showRegister() {
 }
 
 function showAuthError(msg) {
-    const el = document.getElementById('auth-error');
-    el.textContent = msg;
-    el.style.display = 'block';
+    document.getElementById('auth-error').textContent = msg;
+    document.getElementById('auth-error').style.display = 'block';
 }
 
 async function loginWithEmail() {
     const email = document.getElementById('login-email').value.trim();
     const password = document.getElementById('login-password').value;
-    if (!email || !password) { showAuthError('請填入電子郵件和密碼'); return; }
-    try { await auth.signInWithEmailAndPassword(email, password); }
-    catch (e) { showAuthError(getAuthErrorMessage(e.code)); }
+    if (!email || !password) {
+        showAuthError('請填入電子郵件和密碼');
+        return;
+    }
+    try {
+        await auth.signInWithEmailAndPassword(email, password);
+        document.getElementById('login-email').value = '';
+        document.getElementById('login-password').value = '';
+    } catch (error) {
+        showAuthError(getAuthErr(error.code));
+    }
 }
 
 async function registerWithEmail() {
     const email = document.getElementById('register-email').value.trim();
     const pw = document.getElementById('register-password').value;
     const pw2 = document.getElementById('register-password-confirm').value;
-    if (!email || !pw) { showAuthError('請填入電子郵件和密碼'); return; }
-    if (pw !== pw2) { showAuthError('兩次密碼不一致'); return; }
-    if (pw.length < 6) { showAuthError('密碼至少需要6個字元'); return; }
-    try { await auth.createUserWithEmailAndPassword(email, pw); }
-    catch (e) { showAuthError(getAuthErrorMessage(e.code)); }
+    if (!email || !pw) {
+        showAuthError('請填入電子郵件和密碼');
+        return;
+    }
+    if (pw !== pw2) {
+        showAuthError('兩次密碼不一致');
+        return;
+    }
+    if (pw.length < 6) {
+        showAuthError('密碼至少需要6個字元');
+        return;
+    }
+    try {
+        await auth.createUserWithEmailAndPassword(email, pw);
+        document.getElementById('register-email').value = '';
+        document.getElementById('register-password').value = '';
+        document.getElementById('register-password-confirm').value = '';
+    } catch (error) {
+        showAuthError(getAuthErr(error.code));
+    }
 }
 
 async function loginWithGoogle() {
-    try { await auth.signInWithPopup(googleProvider); }
-    catch (e) { if (e.code !== 'auth/popup-closed-by-user') showAuthError(getAuthErrorMessage(e.code)); }
+    try {
+        await auth.signInWithPopup(googleProvider);
+    } catch (error) {
+        if (error.code !== 'auth/popup-closed-by-user') {
+            showAuthError(getAuthErr(error.code));
+        }
+    }
 }
 
 async function logout() {
-    try { await auth.signOut(); }
-    catch (e) { showToast('登出失敗', 'error'); }
+    try {
+        await auth.signOut();
+    } catch (error) {
+        showToast('登出失敗', 'error');
+    }
+}
+
+function getAuthErr(code) {
+    const msgs = {
+        'auth/user-not-found': '此電子郵件尚未註冊',
+        'auth/wrong-password': '密碼錯誤',
+        'auth/email-already-in-use': '此電子郵件已被註冊',
+        'auth/weak-password': '密碼至少需要6個字元',
+        'auth/invalid-email': '電子郵件格式不正確',
+        'auth/too-many-requests': '嘗試次數過多，請稍後再試',
+        'auth/network-request-failed': '網路連線失敗',
+        'auth/invalid-credential': '電子郵件或密碼錯誤'
+    };
+    return msgs[code] || '發生錯誤 (' + code + ')';
 }
 
 auth.onAuthStateChanged(async (user) => {
@@ -819,113 +249,101 @@ auth.onAuthStateChanged(async (user) => {
     }
 });
 
-function getAuthErrorMessage(code) {
-    const m = {
-        'auth/user-not-found': '此電子郵件尚未註冊',
-        'auth/wrong-password': '密碼錯誤',
-        'auth/email-already-in-use': '此電子郵件已被註冊',
-        'auth/weak-password': '密碼太弱，至少需要6個字元',
-        'auth/invalid-email': '電子郵件格式不正確',
-        'auth/too-many-requests': '嘗試次數過多，請稍後再試',
-        'auth/network-request-failed': '網路連線失敗',
-        'auth/popup-blocked': '彈出視窗被封鎖，請允許此網站的彈出視窗',
-        'auth/invalid-credential': '電子郵件或密碼錯誤'
-    };
-    return m[code] || '發生錯誤 (' + code + ')';
-}
-
-// 登入頁面 Enter 鍵支持
-document.addEventListener('keypress', (e) => {
-    if (e.key === 'Enter') {
-        if (document.getElementById('login-form').style.display !== 'none' &&
-            document.getElementById('auth-container').style.display !== 'none') {
-            loginWithEmail();
-        }
-    }
-});
-
-// ============================================================
-// 主應用模組
-// ============================================================
+// ================= 主應用 =================
 let currentUserId = null;
 let expenseCategories = [];
 let incomeCategories = [];
 let projects = [];
 
-const DEFAULT_EXPENSE_CATEGORIES = ['餐飲', '交通', '住房', '購物', '娛樂', '醫療', '教育', '其他'];
-const DEFAULT_INCOME_CATEGORIES = ['薪資', '投資', '兼職', '獎金', '其他'];
+const DEF_EXP_CATS = ['餐飲','交通','住房','購物','娛樂','醫療','教育','其他'];
+const DEF_INC_CATS = ['薪資','投資','兼職','獎金','其他'];
 
 async function initializeApp(uid) {
     currentUserId = uid;
     const today = new Date().toISOString().split('T')[0];
     document.getElementById('expense-date').value = today;
     document.getElementById('income-date').value = today;
-
     const now = new Date();
-    const firstDay = new Date(now.getFullYear(), now.getMonth(), 1).toISOString().split('T')[0];
-    const lastDay = new Date(now.getFullYear(), now.getMonth() + 1, 0).toISOString().split('T')[0];
-    document.getElementById('report-start').value = firstDay;
-    document.getElementById('report-end').value = lastDay;
-    document.getElementById('records-filter-start').value = firstDay;
-    document.getElementById('records-filter-end').value = lastDay;
-
+    const fd = new Date(now.getFullYear(), now.getMonth(), 1).toISOString().split('T')[0];
+    const ld = new Date(now.getFullYear(), now.getMonth()+1, 0).toISOString().split('T')[0];
+    document.getElementById('report-start').value = fd;
+    document.getElementById('report-end').value = ld;
+    document.getElementById('records-filter-start').value = fd;
+    document.getElementById('records-filter-end').value = ld;
     await loadCategories();
     await loadProjects();
     loadRecentExpenses();
     loadRecentIncomes();
 }
 
-function showToast(message, type = 'info') {
+function showToast(msg, type = 'info') {
     const container = document.getElementById('toast-container');
     const toast = document.createElement('div');
     toast.className = `toast ${type}`;
-    toast.textContent = message;
+    toast.textContent = msg;
     container.appendChild(toast);
     setTimeout(() => toast.remove(), 3000);
 }
 
-function switchTab(tabName) {
-    document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.toggle('active', btn.dataset.tab === tabName));
-    document.querySelectorAll('.tab-content').forEach(c => c.classList.toggle('active', c.id === `tab-${tabName}`));
-    if (tabName === 'records') loadAllRecords();
+function switchTab(name) {
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.toggle('active', b.dataset.tab === name));
+    document.querySelectorAll('.tab-content').forEach(c => c.classList.toggle('active', c.id === `tab-${name}`));
+    if (name === 'records') loadAllRecords();
 }
 
-// ============ 分類管理 ============
+// ================= 分類 =================
 async function loadCategories() {
     try {
-        const ed = await db.collection('users').doc(currentUserId).collection('settings').doc('expenseCategories').get();
-        if (ed.exists) { expenseCategories = ed.data().list || []; }
-        else { expenseCategories = [...DEFAULT_EXPENSE_CATEGORIES]; await saveCategories('expense'); }
-
-        const id = await db.collection('users').doc(currentUserId).collection('settings').doc('incomeCategories').get();
-        if (id.exists) { incomeCategories = id.data().list || []; }
-        else { incomeCategories = [...DEFAULT_INCOME_CATEGORIES]; await saveCategories('income'); }
-
-        updateCategoryDropdowns();
-        renderCategoryTags();
-    } catch (e) { console.error(e); showToast('載入分類失敗', 'error'); }
+        let doc = await db.collection('users').doc(currentUserId).collection('settings').doc('expenseCategories').get();
+        if (doc.exists) {
+            expenseCategories = doc.data().list || [];
+        } else {
+            expenseCategories = [...DEF_EXP_CATS];
+            await saveCats('expense');
+        }
+        doc = await db.collection('users').doc(currentUserId).collection('settings').doc('incomeCategories').get();
+        if (doc.exists) {
+            incomeCategories = doc.data().list || [];
+        } else {
+            incomeCategories = [...DEF_INC_CATS];
+            await saveCats('income');
+        }
+        updateCatDD();
+        renderCatTags();
+    } catch (e) {
+        console.error(e);
+        showToast('載入分類失敗', 'error');
+    }
 }
 
-async function saveCategories(type) {
-    const docName = type === 'expense' ? 'expenseCategories' : 'incomeCategories';
+async function saveCats(type) {
+    const name = type === 'expense' ? 'expenseCategories' : 'incomeCategories';
     const list = type === 'expense' ? expenseCategories : incomeCategories;
-    await db.collection('users').doc(currentUserId).collection('settings').doc(docName).set({ list });
+    await db.collection('users').doc(currentUserId).collection('settings').doc(name).set({ list });
 }
 
-function updateCategoryDropdowns() {
-    const ec = document.getElementById('expense-category');
-    ec.innerHTML = '<option value="">-- 選擇種類 --</option>' + expenseCategories.map(c => `<option value="${c}">${c}</option>`).join('');
-    const ic = document.getElementById('income-category');
-    ic.innerHTML = '<option value="">-- 選擇種類 --</option>' + incomeCategories.map(c => `<option value="${c}">${c}</option>`).join('');
+function updateCatDD() {
+    let html = '<option value="">-- 選擇 --</option>';
+    expenseCategories.forEach(c => html += `<option value="${c}">${c}</option>`);
+    document.getElementById('expense-category').innerHTML = html;
+    
+    html = '<option value="">-- 選擇 --</option>';
+    incomeCategories.forEach(c => html += `<option value="${c}">${c}</option>`);
+    document.getElementById('income-category').innerHTML = html;
 }
 
-function renderCategoryTags() {
-    document.getElementById('expense-categories-list').innerHTML = expenseCategories.map(c =>
-        `<span class="tag-item">${c} <i class="fas fa-times tag-delete" onclick="removeCategory('expense',\`${c}\`)"></i></span>`
-    ).join('');
-    document.getElementById('income-categories-list').innerHTML = incomeCategories.map(c =>
-        `<span class="tag-item">${c} <i class="fas fa-times tag-delete" onclick="removeCategory('income',\`${c}\`)"></i></span>`
-    ).join('');
+function renderCatTags() {
+    let html = '';
+    expenseCategories.forEach(c => {
+        html += `<span class="tag-item">${c} <i class="fas fa-times tag-delete" onclick="removeCat('expense','${c}')"></i></span>`;
+    });
+    document.getElementById('expense-categories-list').innerHTML = html;
+    
+    html = '';
+    incomeCategories.forEach(c => {
+        html += `<span class="tag-item">${c} <i class="fas fa-times tag-delete" onclick="removeCat('income','${c}')"></i></span>`;
+    });
+    document.getElementById('income-categories-list').innerHTML = html;
 }
 
 async function addCategory(type) {
@@ -933,238 +351,430 @@ async function addCategory(type) {
     const input = document.getElementById(inputId);
     const name = input.value.trim();
     if (!name) return;
+    
     const list = type === 'expense' ? expenseCategories : incomeCategories;
-    if (list.includes(name)) { showToast('此種類已存在', 'error'); return; }
+    if (list.includes(name)) {
+        showToast('此種類已存在', 'error');
+        return;
+    }
     list.push(name);
-    await saveCategories(type);
-    updateCategoryDropdowns(); renderCategoryTags();
+    await saveCats(type);
+    updateCatDD();
+    renderCatTags();
     input.value = '';
-    showToast(`已新增種類: ${name}`, 'success');
+    showToast(`已新增: ${name}`, 'success');
 }
 
-async function removeCategory(type, name) {
-    if (!confirm(`確定刪除種類「${name}」？`)) return;
-    if (type === 'expense') expenseCategories = expenseCategories.filter(c => c !== name);
-    else incomeCategories = incomeCategories.filter(c => c !== name);
-    await saveCategories(type);
-    updateCategoryDropdowns(); renderCategoryTags();
-    showToast(`已刪除種類: ${name}`, 'info');
+async function removeCat(type, name) {
+    if (!confirm(`確定刪除「${name}」？`)) return;
+    if (type === 'expense') {
+        expenseCategories = expenseCategories.filter(c => c !== name);
+    } else {
+        incomeCategories = incomeCategories.filter(c => c !== name);
+    }
+    await saveCats(type);
+    updateCatDD();
+    renderCatTags();
+    showToast(`已刪除: ${name}`, 'info');
 }
 
-// ============ Project 管理 ============
+// ================= Project =================
 async function loadProjects() {
     try {
         const doc = await db.collection('users').doc(currentUserId).collection('settings').doc('projects').get();
         projects = doc.exists ? (doc.data().list || []) : [];
-        updateProjectDropdowns(); renderProjectTags();
-    } catch (e) { console.error(e); }
+        updateProjDD();
+        renderProjTags();
+    } catch (e) {
+        console.error(e);
+    }
 }
 
 async function saveProjects() {
     await db.collection('users').doc(currentUserId).collection('settings').doc('projects').set({ list: projects });
 }
 
-function updateProjectDropdowns() {
-    ['expense-project', 'income-project'].forEach(id => {
-        document.getElementById(id).innerHTML = '<option value="">-- 選擇 Project --</option>' +
-            projects.map(p => `<option value="${p}">${p}</option>`).join('');
-    });
+function updateProjDD() {
+    let html = '<option value="">-- 無 --</option>';
+    projects.forEach(p => html += `<option value="${p}">${p}</option>`);
+    document.getElementById('expense-project').innerHTML = html;
+    document.getElementById('income-project').innerHTML = html;
 }
 
-function renderProjectTags() {
-    document.getElementById('projects-list').innerHTML = projects.map(p =>
-        `<span class="tag-item">${p} <i class="fas fa-times tag-delete" onclick="removeProject(\`${p}\`)"></i></span>`
-    ).join('');
+function renderProjTags() {
+    let html = '';
+    projects.forEach(p => {
+        html += `<span class="tag-item">${p} <i class="fas fa-times tag-delete" onclick="removeProject('${p}')"></i></span>`;
+    });
+    document.getElementById('projects-list').innerHTML = html;
 }
 
 async function addProject() {
     const input = document.getElementById('new-project');
     const name = input.value.trim();
     if (!name) return;
-    if (projects.includes(name)) { showToast('此 Project 已存在', 'error'); return; }
+    if (projects.includes(name)) {
+        showToast('已存在', 'error');
+        return;
+    }
     projects.push(name);
-    await saveProjects(); updateProjectDropdowns(); renderProjectTags();
+    await saveProjects();
+    updateProjDD();
+    renderProjTags();
     input.value = '';
-    showToast(`已新增 Project: ${name}`, 'success');
+    showToast(`已新增: ${name}`, 'success');
 }
 
 async function removeProject(name) {
-    if (!confirm(`確定刪除 Project「${name}」？`)) return;
+    if (!confirm(`確定刪除「${name}」？`)) return;
     projects = projects.filter(p => p !== name);
-    await saveProjects(); updateProjectDropdowns(); renderProjectTags();
-    showToast(`已刪除 Project: ${name}`, 'info');
+    await saveProjects();
+    updateProjDD();
+    renderProjTags();
+    showToast(`已刪除: ${name}`, 'info');
 }
 
-// ============ 新增支出 ============
+// ================= 新增支出/收入 =================
 async function addExpense() {
-    const amount = parseFloat(document.getElementById('expense-amount').value);
-    const date = document.getElementById('expense-date').value;
-    const method = document.getElementById('expense-method').value;
-    const category = document.getElementById('expense-category').value;
-    const project = document.getElementById('expense-project').value;
-    const note = document.getElementById('expense-note').value.trim();
+    const a = parseFloat(document.getElementById('expense-amount').value);
+    const d = document.getElementById('expense-date').value;
+    const m = document.getElementById('expense-method').value;
+    const c = document.getElementById('expense-category').value;
+    const p = document.getElementById('expense-project').value;
+    const n = document.getElementById('expense-note').value.trim();
 
-    if (!amount || amount <= 0) { showToast('請輸入有效金額', 'error'); return; }
-    if (!date) { showToast('請選擇日期', 'error'); return; }
-    if (!category) { showToast('請選擇費用種類', 'error'); return; }
+    if (!a || a <= 0) {
+        showToast('請輸入有效金額', 'error');
+        return;
+    }
+    if (!d) {
+        showToast('請選擇日期', 'error');
+        return;
+    }
+    if (!c) {
+        showToast('請選擇種類', 'error');
+        return;
+    }
 
     try {
         await db.collection('users').doc(currentUserId).collection('expenses').add({
-            amount, date, method, category, project, note,
+            amount: a,
+            date: d,
+            method: m,
+            category: c,
+            project: p,
+            note: n,
             createdAt: firebase.firestore.FieldValue.serverTimestamp()
         });
         document.getElementById('expense-amount').value = '';
         document.getElementById('expense-note').value = '';
         showToast(`已記錄支出 
 $$
-{amount.toFixed(2)}`, 'success');
+{a.toFixed(2)}`, 'success');
         loadRecentExpenses();
-    } catch (e) { console.error(e); showToast('新增支出失敗', 'error'); }
+    } catch (e) {
+        console.error(e);
+        showToast('新增失敗', 'error');
+    }
 }
 
-// ============ 新增收入 ============
 async function addIncome() {
-    const amount = parseFloat(document.getElementById('income-amount').value);
-    const date = document.getElementById('income-date').value;
-    const method = document.getElementById('income-method').value;
-    const category = document.getElementById('income-category').value;
-    const project = document.getElementById('income-project').value;
-    const note = document.getElementById('income-note').value.trim();
+    const a = parseFloat(document.getElementById('income-amount').value);
+    const d = document.getElementById('income-date').value;
+    const m = document.getElementById('income-method').value;
+    const c = document.getElementById('income-category').value;
+    const p = document.getElementById('income-project').value;
+    const n = document.getElementById('income-note').value.trim();
 
-    if (!amount || amount <= 0) { showToast('請輸入有效金額', 'error'); return; }
-    if (!date) { showToast('請選擇日期', 'error'); return; }
-    if (!category) { showToast('請選擇收入種類', 'error'); return; }
+    if (!a || a <= 0) {
+        showToast('請輸入有效金額', 'error');
+        return;
+    }
+    if (!d) {
+        showToast('請選擇日期', 'error');
+        return;
+    }
+    if (!c) {
+        showToast('請選擇種類', 'error');
+        return;
+    }
 
     try {
         await db.collection('users').doc(currentUserId).collection('incomes').add({
-            amount, date, method, category, project, note,
+            amount: a,
+            date: d,
+            method: m,
+            category: c,
+            project: p,
+            note: n,
             createdAt: firebase.firestore.FieldValue.serverTimestamp()
         });
         document.getElementById('income-amount').value = '';
         document.getElementById('income-note').value = '';
         showToast(`已記錄收入
 $$
-{amount.toFixed(2)}`, 'success');
+{a.toFixed(2)}`, 'success');
         loadRecentIncomes();
-    } catch (e) { console.error(e); showToast('新增收入失敗', 'error'); }
+    } catch (e) {
+        console.error(e);
+        showToast('新增失敗', 'error');
+    }
 }
 
-// ============ 載入最近支出 ============
+// ================= 載入記錄 =================
 async function loadRecentExpenses() {
     const container = document.getElementById('recent-expenses');
     container.innerHTML = '<p class="empty-msg"><span class="loading-spinner"></span> 載入中...</p>';
     try {
-        const snap = await db.collection('users').doc(currentUserId)
-            .collection('expenses').orderBy('date', 'desc').limit(10).get();
-        if (snap.empty) { container.innerHTML = '<p class="empty-msg">尚無支出記錄</p>'; return; }
+        const snap = await db.collection('users').doc(currentUserId).collection('expenses').orderBy('date', 'desc').limit(10).get();
+        if (snap.empty) {
+            container.innerHTML = '<p class="empty-msg">尚無支出記錄</p>';
+            return;
+        }
         container.innerHTML = '';
-        snap.forEach(doc => { container.innerHTML += createRecordHTML(doc.id, doc.data(), 'expense'); });
-    } catch (e) { console.error(e); container.innerHTML = '<p class="empty-msg">載入失敗</p>'; }
+        snap.forEach(doc => {
+            container.innerHTML += createRecordHTML(doc.id, doc.data(), 'expense');
+        });
+    } catch (e) {
+        container.innerHTML = '<p class="empty-msg">載入失敗</p>';
+    }
 }
 
-// ============ 載入最近收入 ============
 async function loadRecentIncomes() {
     const container = document.getElementById('recent-incomes');
     container.innerHTML = '<p class="empty-msg"><span class="loading-spinner"></span> 載入中...</p>';
     try {
-        const snap = await db.collection('users').doc(currentUserId)
-            .collection('incomes').orderBy('date', 'desc').limit(10).get();
-        if (snap.empty) { container.innerHTML = '<p class="empty-msg">尚無收入記錄</p>'; return; }
+        const snap = await db.collection('users').doc(currentUserId).collection('incomes').orderBy('date', 'desc').limit(10).get();
+        if (snap.empty) {
+            container.innerHTML = '<p class="empty-msg">尚無收入記錄</p>';
+            return;
+        }
         container.innerHTML = '';
-        snap.forEach(doc => { container.innerHTML += createRecordHTML(doc.id, doc.data(), 'income'); });
-    } catch (e) { console.error(e); container.innerHTML = '<p class="empty-msg">載入失敗</p>'; }
+        snap.forEach(doc => {
+            container.innerHTML += createRecordHTML(doc.id, doc.data(), 'income');
+        });
+    } catch (e) {
+        container.innerHTML = '<p class="empty-msg">載入失敗</p>';
+    }
 }
 
-// ============ 載入所有記錄 ============
 async function loadAllRecords() {
     const container = document.getElementById('all-records');
     container.innerHTML = '<p class="empty-msg"><span class="loading-spinner"></span> 載入中...</p>';
-    const filterType = document.getElementById('records-filter-type').value;
-    const startDate = document.getElementById('records-filter-start').value;
-    const endDate = document.getElementById('records-filter-end').value;
+    const ft = document.getElementById('records-filter-type').value;
+    const sd = document.getElementById('records-filter-start').value;
+    const ed = document.getElementById('records-filter-end').value;
 
     try {
-        let allRecords = [];
-
-        if (filterType === 'all' || filterType === 'expense') {
+        let all = [];
+        if (ft === 'all' || ft === 'expense') {
             let q = db.collection('users').doc(currentUserId).collection('expenses').orderBy('date', 'desc');
-            if (startDate) q = q.where('date', '>=', startDate);
-            if (endDate) q = q.where('date', '<=', endDate);
+            if (sd) q = q.where('date', '>=', sd);
+            if (ed) q = q.where('date', '<=', ed);
             const snap = await q.get();
-            snap.forEach(doc => allRecords.push({ id: doc.id, type: 'expense', ...doc.data() }));
+            snap.forEach(doc => all.push({ id: doc.id, type: 'expense', ...doc.data() }));
         }
-
-        if (filterType === 'all' || filterType === 'income') {
+        if (ft === 'all' || ft === 'income') {
             let q = db.collection('users').doc(currentUserId).collection('incomes').orderBy('date', 'desc');
-            if (startDate) q = q.where('date', '>=', startDate);
-            if (endDate) q = q.where('date', '<=', endDate);
+            if (sd) q = q.where('date', '>=', sd);
+            if (ed) q = q.where('date', '<=', ed);
             const snap = await q.get();
-            snap.forEach(doc => allRecords.push({ id: doc.id, type: 'income', ...doc.data() }));
+            snap.forEach(doc => all.push({ id: doc.id, type: 'income', ...doc.data() }));
         }
-
-        allRecords.sort((a, b) => b.date.localeCompare(a.date));
-
-        if (allRecords.length === 0) { container.innerHTML = '<p class="empty-msg">此期間無記錄</p>'; return; }
+        all.sort((a, b) => b.date.localeCompare(a.date));
+        if (!all.length) {
+            container.innerHTML = '<p class="empty-msg">此期間無記錄</p>';
+            return;
+        }
         container.innerHTML = '';
-        allRecords.forEach(r => { container.innerHTML += createRecordHTML(r.id, r, r.type); });
-    } catch (e) { console.error(e); container.innerHTML = '<p class="empty-msg">載入失敗</p>'; }
+        all.forEach(r => {
+            container.innerHTML += createRecordHTML(r.id, r, r.type);
+        });
+    } catch (e) {
+        console.error(e);
+        container.innerHTML = '<p class="empty-msg">載入失敗</p>';
+    }
 }
 
-// ============ 記錄 HTML ============
 function createRecordHTML(id, data, type) {
     const icon = type === 'expense' ? 'fa-arrow-down' : 'fa-arrow-up';
     const sign = type === 'expense' ? '-' : '+';
     const me = data.method === '現金' ? '💵' : data.method === '銀行' ? '🏦' : '💳';
-    return `
-        <div class="record-item">
-            <div class="record-icon ${type}"><i class="fas ${icon}"></i></div>
-            <div class="record-info">
-                <div class="record-title">${data.category}${data.project ? ' · ' + data.project : ''}</div>
-                <div class="record-meta">${data.date} · ${me} ${data.method}${data.note ? ' · ' + data.note : ''}</div>
-            </div>
-            <div class="record-amount ${type}">${sign}$${data.amount.toFixed(2)}</div>
-            <div class="record-actions">
-                <button class="btn btn-xs btn-outline" onclick="editRecord('${id}','${type}')" title="編輯"><i class="fas fa-edit"></i></button>
-                <button class="btn btn-xs btn-outline" onclick="deleteRecord('${id}','${type}')" title="刪除"><i class="fas fa-trash"></i></button>
-            </div>
-        </div>`;
+    return `<div class="record-item"><div class="record-icon ${type}"><i class="fas ${icon}"></i></div><div class="record-info"><div class="record-title">${data.category}${data.project ? ' · ' + data.project : ''}</div><div class="record-meta">${data.date} · ${me} ${data.method}${data.note ? ' · ' + data.note : ''}</div></div><div class="record-amount ${type}">${sign}
+$$
+{data.amount.toFixed(2)}</div><div class="record-actions"><button class="btn btn-xs btn-outline" onclick="editRecord('${id}','${type}')" title="編輯"><i class="fas fa-edit"></i></button><button class="btn btn-xs btn-outline" onclick="deleteRecord('${id}','${type}')" title="刪除"><i class="fas fa-trash"></i></button></div></div>`;
 }
 
-// ============ 刪除記錄 ============
 async function deleteRecord(id, type) {
-    if (!confirm('確定要刪除此記錄？')) return;
+    if (!confirm('確定要刪除？')) return;
     const col = type === 'expense' ? 'expenses' : 'incomes';
     try {
         await db.collection('users').doc(currentUserId).collection(col).doc(id).delete();
-        showToast('已刪除記錄', 'info');
-        if (type === 'expense') loadRecentExpenses(); else loadRecentIncomes();
+        showToast('已刪除', 'info');
+        if (type === 'expense') loadRecentExpenses();
+        else loadRecentIncomes();
         if (document.getElementById('tab-records').classList.contains('active')) loadAllRecords();
-    } catch (e) { console.error(e); showToast('刪除失敗', 'error'); }
+    } catch (e) {
+        showToast('刪除失敗', 'error');
+    }
 }
 
-// ============ 編輯記錄 ============
 async function editRecord(id, type) {
     const col = type === 'expense' ? 'expenses' : 'incomes';
     try {
         const doc = await db.collection('users').doc(currentUserId).collection(col).doc(id).get();
-        if (!doc.exists) { showToast('記錄不存在', 'error'); return; }
+        if (!doc.exists) {
+            showToast('記錄不存在', 'error');
+            return;
+        }
         const data = doc.data();
         const isExp = type === 'expense';
         const cats = isExp ? expenseCategories : incomeCategories;
         const methods = isExp ? ['現金', '銀行', '信用卡'] : ['現金', '銀行'];
 
         document.getElementById('edit-modal-title').textContent = isExp ? '編輯支出' : '編輯收入';
-        document.getElementById('edit-modal-body').innerHTML = `
+        let html = `
             <div class="form-group"><label>金額</label><input type="number" id="edit-amount" value="${data.amount}" step="0.01" min="0"></div>
             <div class="form-group"><label>日期</label><input type="date" id="edit-date" value="${data.date}"></div>
-            <div class="form-group"><label>${isExp ? '支出' : '收入'}形式</label>
-                <select id="edit-method">${methods.map(m => `<option value="${m}" ${data.method === m ? 'selected' : ''}>${m}</option>`).join('')}</select></div>
-            <div class="form-group"><label>種類</label>
-                <select id="edit-category">${cats.map(c => `<option value="${c}" ${data.category === c ? 'selected' : ''}>${c}</option>`).join('')}</select></div>
-            <div class="form-group"><label>Project</label>
-                <select id="edit-project"><option value="">-- 無 --</option>${projects.map(p => `<option value="${p}" ${data.project === p ? 'selected' : ''}>${p}</option>`).join('')}</select></div>
-            <div class="form-group"><label>備註</label><input type="text" id="edit-note" value="${data.note || ''}"></div>`;
-
+            <div class="form-group"><label>形式</label><select id="edit-method">`;
+        methods.forEach(m => {
+            html += `<option value="${m}" ${data.method === m ? 'selected' : ''}>${m}</option>`;
+        });
+        html += `</select></div><div class="form-group"><label>種類</label><select id="edit-category">`;
+        cats.forEach(c => {
+            html += `<option value="${c}" ${data.category === c ? 'selected' : ''}>${c}</option>`;
+        });
+        html += `</select></div><div class="form-group"><label>Project</label><select id="edit-project"><option value="">-- 無 --</option>`;
+        projects.forEach(p => {
+            html += `<option value="${p}" ${data.project === p ? 'selected' : ''}>${p}</option>`;
+        });
+        html += `</select></div><div class="form-group"><label>備註</label><input type="text" id="edit-note" value="${data.note || ''}"></div>`;
+        document.getElementById('edit-modal-body').innerHTML = html;
         document.getElementById('edit-modal').style.display = 'flex';
 
-        document.getElementById('edit-
+        document.getElementById('edit-modal-save').onclick = async () => {
+            const ud = {
+                amount: parseFloat(document.getElementById('edit-amount').value),
+                date: document.getElementById('edit-date').value,
+                method: document.getElementById('edit-method').value,
+                category: document.getElementById('edit-category').value,
+                project: document.getElementById('edit-project').value,
+                note: document.getElementById('edit-note').value.trim()
+            };
+            if (!ud.amount || ud.amount <= 0) {
+                showToast('請輸入有效金額', 'error');
+                return;
+            }
+            try {
+                await db.collection('users').doc(currentUserId).collection(col).doc(id).update(ud);
+                closeEditModal();
+                showToast('已更新', 'success');
+                if (isExp) loadRecentExpenses();
+                else loadRecentIncomes();
+                if (document.getElementById('tab-records').classList.contains('active')) loadAllRecords();
+            } catch (e) {
+                showToast('更新失敗', 'error');
+            }
+        };
+    } catch (e) {
+        console.error(e);
+        showToast('載入失敗', 'error');
+    }
+}
+
+function closeEditModal() {
+    document.getElementById('edit-modal').style.display = 'none';
+}
+
+// ================= 報表 =================
+async function generateReports() {
+    const sd = document.getElementById('report-start').value;
+    const ed = document.getElementById('report-end').value;
+    if (!sd || !ed) {
+        showToast('請選擇日期', 'error');
+        return;
+    }
+    if (sd > ed) {
+        showToast('開始日期不能晚於結束日期', 'error');
+        return;
+    }
+    try {
+        const es = await db.collection('users').doc(currentUserId).collection('expenses').where('date', '>=', sd).where('date', '<=', ed).orderBy('date', 'asc').get();
+        const expenses = [];
+        es.forEach(doc => expenses.push(doc.data()));
+        
+        const is = await db.collection('users').doc(currentUserId).collection('incomes').where('date', '>=', sd).where('date', '<=', ed).orderBy('date', 'asc').get();
+        const incomes = [];
+        is.forEach(doc => incomes.push(doc.data()));
+        
+        const ti = incomes.reduce((s, r) => s + r.amount, 0);
+        const te = expenses.reduce((s, r) => s + r.amount, 0);
+        const net = ti - te;
+        
+        document.getElementById('report-total-income').textContent = `
+$$
+{ti.toFixed(2)}`;
+        document.getElementById('report-total-expense').textContent = `
+$$
+{te.toFixed(2)}`;
+        const ne = document.getElementById('report-net');
+        ne.textContent = `${net >= 0 ? '+' : ''}
+$$
+{net.toFixed(2)}`;
+        ne.style.color = net >= 0 ? 'var(--success)' : 'var(--danger)';
+        
+        document.getElementById('report-summary').style.display = 'grid';
+        
+        // 生成報表
+        if (incomes.length > 0) {
+            document.getElementById('report-income-section').style.display = 'block';
+            let h = `<p style="margin-bottom:10px;color:var(--gray-500);font-size:13px">📅 共 ${incomes.length} 筆</p>`;
+            h += '<h4 style="margin:20px 0 10px;font-size:14px">📊 按種類</h4><table class="report-table"><thead><tr><th>種類</th><th style="text-align:right">金額</th></tr></thead><tbody>';
+            const byCat = {};
+            incomes.forEach(r => byCat[r.category] = (byCat[r.category] || 0) + r.amount);
+            Object.entries(byCat).sort((a, b) => b[1] - a[1]).forEach(([cat, amt]) => {
+                h += `<tr><td>${cat}</td><td style="text-align:right;color:var(--success)">+
+$$
+{amt.toFixed(2)}</td></tr>`;
+            });
+            h += `<tr class="total-row"><td><strong>合計</strong></td><td style="text-align:right"><strong>+
+$$
+{ti.toFixed(2)}</strong></td></tr></tbody></table>`;
+            document.getElementById('report-income-detail').innerHTML = h;
+        } else {
+            document.getElementById('report-income-section').style.display = 'none';
+        }
+        
+        if (expenses.length > 0) {
+            document.getElementById('report-expense-section').style.display = 'block';
+            let h = `<p style="margin-bottom:10px;color:var(--gray-500);font-size:13px">📅 共 ${expenses.length} 筆</p>`;
+            h += '<h4 style="margin:20px 0 10px;font-size:14px">📊 按種類</h4><table class="report-table"><thead><tr><th>種類</th><th style="text-align:right">金額</th></tr></thead><tbody>';
+            const byCat = {};
+            expenses.forEach(r => byCat[r.category] = (byCat[r.category] || 0) + r.amount);
+            Object.entries(byCat).sort((a, b) => b[1] - a[1]).forEach(([cat, amt]) => {
+                h += `<tr><td>${cat}</td><td style="text-align:right;color:var(--danger)">-
+$$
+{amt.toFixed(2)}</td></tr>`;
+            });
+            h += `<tr class="total-row"><td><strong>合計</strong></td><td style="text-align:right"><strong>-
+$$
+{te.toFixed(2)}</strong></td></tr></tbody></table>`;
+            document.getElementById('report-expense-detail').innerHTML = h;
+        } else {
+            document.getElementById('report-expense-section').style.display = 'none';
+        }
+        
+        showToast('報表已生成', 'success');
+    } catch (e) {
+        console.error(e);
+        showToast('生成報表失敗', 'error');
+    }
+}
+
+// Keyboard shortcut
+document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeEditModal();
+});
+</script>
+</body>
+</html>
